@@ -1,4 +1,4 @@
-import ReviewItem from "./Reviews/ReviewItem";
+import ReviewItem from "./ReviewItem";
 
 export default function Reviews() {
     return (
