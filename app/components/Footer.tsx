@@ -38,7 +38,7 @@ export default function Footer(){
                 <a className='md:hidden' href="https://zngr-dynamics.ch">Site by <span className="font-medium text-white-500">ZNGR</span></a>
             </div>
             <div>
-                <h1 className='pt-8 text-6xl md:text-9xl xl:text-10xl circula-bold sm:circula-extrabold xl:circula-black text-black-900'>
+                <h1 className='pt-8 text-6xl md:text-9xl xl:text-10xl circula-bold sm:circula-extrabold xl:circula-black text-black-900 drop-shadow-lg'>
                     Banh Mi Bros
                 </h1>
             </div>
