@@ -1,5 +1,3 @@
-import BanhMi from '../../public/BanhMi.png';
-
 export default function Menu() {
 
     return (
@@ -7,7 +5,7 @@ export default function Menu() {
             {/* Sticky container for the background image */}
             <div className="sticky top-0 w-full h-screen">
                 <img
-                    src={BanhMi}
+                    src="./BanhMi.png"
                     alt="Banh Mi"
                     className="w-full h-full object-cover"
                 />
