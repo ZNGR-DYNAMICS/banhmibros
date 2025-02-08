@@ -102,7 +102,7 @@ function App() {
                         <h2>
                             Quality before quantity. 
                         </h2>
-                        <Button>
+                        <Button width='w-24'>
                             Small
                         </Button>
                         <h2>
@@ -110,7 +110,9 @@ function App() {
                         </h2>
                     </div>
                     <DatabaseViewer />
-                    <Reviews />
+                    <div className='bg-black-500' ref={scrollRef}>
+                        <Reviews />
+                    </div>
                 </main>
                 <footer>
                     <Footer />
