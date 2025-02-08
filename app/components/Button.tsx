@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-export default function Button({ color = "black-500", children }: { color?: string; children: React.ReactNode }) {
+interface ButtonProps {
+    width?: string;
+    color?: string;
+    children: React.ReactNode;
+}
+
+const Button: React.FC<ButtonProps> = ({ color = 'black-500', width = 'w-48', children }) => {
     const [hover, setHover] = useState(false);
     const borderColor = `border-${color}`;
     const textColor = `text-${color}`;
@@ -32,7 +38,7 @@ export default function Button({ color = "black-500", children }: { color?: stri
             onMouseLeave={() => setHover(false)}
         >
         <div
-            className={`relative h-12 w-24 flex items-center text-4xl ${textColor} overflow-hidden`}
+            className={`relative h-12 ${width} flex items-center text-4xl ${textColor} overflow-hidden`}
         >
             <motion.p
                 className="absolute top-0 circula-bold"
@@ -52,11 +58,9 @@ export default function Button({ color = "black-500", children }: { color?: stri
             </motion.p>
         </div>
 
-        <div className={`flex items-center justify-center relative w-8 h-12 overflow-hidden`}>
+        <div className={`flex items-center justify-center relative h-12 w-8 overflow-hidden`}>
             <motion.svg
-                className="absolute"
-                width="32"
-                height="48"
+                className="absolute h-10 w-8"
                 viewBox="0 0 32 48"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -72,9 +76,7 @@ export default function Button({ color = "black-500", children }: { color?: stri
                 />
             </motion.svg>
             <motion.svg
-                className="absolute -top-12"
-                width="32"
-                height="48"
+                className="absolute -top-12 h-10 w-8"
                 viewBox="0 0 32 48"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -93,3 +95,5 @@ export default function Button({ color = "black-500", children }: { color?: stri
         </button>
     );
 }
+
+export default Button;
