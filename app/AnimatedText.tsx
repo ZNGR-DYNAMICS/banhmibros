@@ -50,6 +50,9 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ children, scrollRef }) => {
     const text = React.Children.toArray(children || "").join("");
     const progress = useTransform(scrollYProgress, [0, 1], [0, text.length]);
 
+    const tokens = text.split(/(\s+)/);
+    let globalIndex = 0;
+    
     return (
         <div
             ref={containerRef}
@@ -59,10 +62,39 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ children, scrollRef }) => {
                 wordWrap: "break-word",
                 position: "relative",
             }}
+            className="lg:pb-4"
         >
-            {text.split("").map((char, index) => (
-                <AnimatedCharacter key={index} char={char} index={index} progress={progress} />
-            ))}
+            {tokens.map((token, tokenIndex) => {
+                // If the token is only whitespace, render it directly.
+                if (/^\s+$/.test(token)) {
+                    globalIndex += token.length;
+                    return token;
+                }
+    
+            // Otherwise, it's a word.
+                return (
+                    <span
+                        key={tokenIndex}
+                        style={{
+                            display: "inline-block",
+                            whiteSpace: "nowrap", // Prevent breaking inside the word.
+                        }}
+                    >
+                        {token.split("").map((char) => {
+                            const currentIndex = globalIndex;
+                            globalIndex += 1;
+                            return (
+                                <AnimatedCharacter
+                                    key={currentIndex}
+                                    char={char}
+                                    index={currentIndex}
+                                    progress={progress}
+                                />
+                            );
+                        })}
+                    </span>
+                );
+            })}
         </div>
     );
 };
