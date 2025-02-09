@@ -1,11 +1,13 @@
-import { useRef } from 'react';
 import ReviewItem from "./ReviewItem";
 import Headline from "../Headline";
 import AnimatedText from "../../AnimatedText";
 import Button from '../Button';
 
-export default function Reviews() {
-    const scrollRef = useRef<HTMLDivElement>(null);
+interface AnimatedTextProp {
+    scrollRef: React.RefObject<HTMLElement>;
+}
+
+const Reviews: React.FC<AnimatedTextProp> = ({ scrollRef }) => {
 
     return (
         <div>
@@ -49,3 +51,5 @@ export default function Reviews() {
         </div>
     );
 }
+
+export default Reviews;
