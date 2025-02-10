@@ -4,24 +4,26 @@ import { motion, useScroll, useTransform, MotionValue, useSpring } from "framer-
 export type AnimatedTextProps = {
     children?: React.ReactNode;
     scrollRef: React.RefObject<HTMLElement>;
+    transitionColor?: string;
     "data-en"?: string;
     "data-de"?: string;
 };
 
 type AnimatedCharacterProps = {
+    transitionColor?: string;
     char: string;
     index: number;
     progress: MotionValue<number>;
 };
 
-const AnimatedCharacter: React.FC<AnimatedCharacterProps> = ({ char, index, progress }) => {
+const AnimatedCharacter: React.FC<AnimatedCharacterProps> = ({ char, index, progress, transitionColor = '#1D1A17' }) => {
     useTransform(progress, (value) => value - index);
     const smoothedProgress = useSpring(progress, { stiffness: 200, damping: 50 })
 
     const color = useTransform(
         smoothedProgress,
         [index - 0.5, index + 0.5],
-        ["#8E8983", "#1D1A17"]
+        ["#8E8983", `${transitionColor}`]
     );
   
     return (
@@ -37,7 +39,7 @@ const AnimatedCharacter: React.FC<AnimatedCharacterProps> = ({ char, index, prog
     );
 };
 
-const AnimatedText: React.FC<AnimatedTextProps> = ({ children, scrollRef }) => {
+const AnimatedText: React.FC<AnimatedTextProps> = ({ children, scrollRef, transitionColor }) => {
     const containerRef = React.useRef<HTMLDivElement>(null);
 
     const { scrollYProgress } = useScroll({
@@ -89,6 +91,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ children, scrollRef }) => {
                                     char={char}
                                     index={currentIndex}
                                     progress={progress}
+                                    transitionColor={transitionColor}
                                 />
                             );
                         })}

@@ -10,9 +10,9 @@ interface AnimatedTextProp {
 const Reviews: React.FC<AnimatedTextProp> = ({ scrollRef }) => {
 
     return (
-        <div>
+        <div className='bg-black-500'>
             <Headline>
-                <AnimatedText scrollRef={scrollRef} data-en="Here's what our customers say." data-de="Was unsere Kunden über uns sagen." />
+                <AnimatedText transitionColor='#FFF8EE' scrollRef={scrollRef} data-en="Here's what our customers say." data-de="Was unsere Kunden über uns sagen." />
             </Headline>
             <div className="grid grid-cols-2 px-8 md:px-16 lg:px-32 2xl:px-64 py-16 md:py-32 lg:py-64 2xl:py-96 gap-12">
                 <ReviewItem>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, eius!</ReviewItem>

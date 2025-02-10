@@ -110,8 +110,8 @@ function App() {
                         </h2>
                     </div>
                     <DatabaseViewer />
-                    <div className='bg-black-500' ref={scrollRef}>
-                        <Reviews scrollRef={scrollRef} />
+                    <div>
+                        <Reviews scrollRef={scrollRef}/>
                     </div>
                 </main>
                 <footer>
