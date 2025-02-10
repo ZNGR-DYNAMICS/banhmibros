@@ -10,11 +10,11 @@ interface AnimatedTextProp {
 const Reviews: React.FC<AnimatedTextProp> = ({ scrollRef }) => {
 
     return (
-        <div className='bg-black-500'>
+        <div className='relative bg-black-500'>
             <Headline>
-                <AnimatedText transitionColor='#FFF8EE' scrollRef={scrollRef} data-en="Here's what our customers say." data-de="Was unsere Kunden über uns sagen." />
+                <AnimatedText transitionColor='#FFF8EE' scrollRef={scrollRef} data-en="St.Gallen loves Banh Mis! Here's what our customers say." data-de="St.Gallen liebt Banh Mis! Was unsere Kunden über uns sagen." />
             </Headline>
-            <div className="grid grid-cols-2 px-8 md:px-16 lg:px-32 2xl:px-64 py-16 md:py-32 lg:py-64 2xl:py-96 gap-12">
+            <div className="relative grid grid-cols-2 justify-center place-items-center gap-12 px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32">
                 <ReviewItem>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, eius!</ReviewItem>
                 <ReviewItem>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, eius!</ReviewItem>
                 <ReviewItem>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, eius!</ReviewItem>
@@ -42,7 +42,10 @@ const Reviews: React.FC<AnimatedTextProp> = ({ scrollRef }) => {
                     </div>
                 </div>
                 <div>
-                    <p className='text-8xl text-white-500 font-semibold'>on Google Reviews by over 110 users.</p>
+                    <Headline>
+                        <AnimatedText transitionColor='#FFF8EE' scrollRef={scrollRef} data-de="auf Google Reviews von über 110 Nutzern." data-en="on Google Reviews by over 110 users."></AnimatedText>
+                    </Headline>
+                    {/*<p className='text-8xl text-white-500 font-semibold'>on Google Reviews by over 110 users.</p>*/}
                 </div>
                 <div className='flex'>
                     <Button width='w-48' color='white-500'>Leave a Review</Button>
