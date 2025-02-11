@@ -23,9 +23,9 @@ export default function ReviewItem({ children }: { children: React.ReactNode }) 
                     </svg>
                 </div>
                 <div className='flex flex-row gap-2'>
-                    <p>Joe Doe</p>
+                    <p>Ghazaleh Eghlima</p>
                     <p>-</p>
-                    <p>Oktober 24</p>
+                    <p>August 24</p>
                 </div>
             </div>
         </div>
