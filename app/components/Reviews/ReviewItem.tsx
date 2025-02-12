@@ -1,6 +1,14 @@
 import React from 'react';
 
-export default function ReviewItem({ children }: { children: React.ReactNode }) {
+type DateFormat = `${string} ${number}`;
+
+interface ReviewItemProps {
+    children: React.ReactNode;
+    author: string;
+    date: DateFormat;
+}
+
+const ReviewItem: React.FC<ReviewItemProps> = ({ children, author, date }) => {
     return (
         <div className="flex flex-col rounded-3xl bg-white-500 p-8 gap-8 font-medium">
             <p className='font-poppins'>{children}</p>
@@ -23,11 +31,13 @@ export default function ReviewItem({ children }: { children: React.ReactNode }) 
                     </svg>
                 </div>
                 <div className='flex flex-row gap-2'>
-                    <p>Ghazaleh Eghlima</p>
+                    <p>{author}</p>
                     <p>-</p>
-                    <p>August 24</p>
+                    <p>{date}</p>
                 </div>
             </div>
         </div>
     )
 }
+
+export default ReviewItem;
