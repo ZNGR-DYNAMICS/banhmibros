@@ -48,7 +48,9 @@ const Reviews: React.FC<AnimatedTextProp> = ({ scrollRef }) => {
                     {/*<p className='text-8xl text-white-500 font-semibold'>on Google Reviews by over 110 users.</p>*/}
                 </div>
                 <div className='flex'>
+                <a target="_blank" href="https://www.google.com/maps/place/Banh+Mi+Bros/@47.4273363,9.3744299,386m/data=!3m1!1e3!4m18!1m9!3m8!1s0x479b1fb7cc166b77:0x648aa610c21baf71!2sBanh+Mi+Bros!8m2!3d47.4268735!4d9.3752029!9m1!1b1!16s%2Fg%2F11h818c1wc!3m7!1s0x479b1fb7cc166b77:0x648aa610c21baf71!8m2!3d47.4268735!4d9.3752029!9m1!1b1!16s%2Fg%2F11h818c1wc?entry=ttu&g_ep=EgoyMDI1MDIwOS4wIKXMDSoASAFQAw%3D%3D">
                     <Button width='w-48' color='white-500'>Leave a Review</Button>
+                </a>
                 </div>
             </div>
         </div>
