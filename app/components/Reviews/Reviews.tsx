@@ -14,7 +14,7 @@ const Reviews: React.FC<AnimatedTextProp> = ({ scrollRef }) => {
             <Headline>
                 <AnimatedText transitionColor='#FFF8EE' scrollRef={scrollRef} data-en="St.Gallen loves Banh Mis! Here's what our customers say." data-de="St.Gallen liebt Banh Mis! Was unsere Kunden über uns sagen." />
             </Headline>
-            <div className="relative grid grid-cols-2 justify-center place-items-center gap-12 px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32">
+            <div className="relative grid grid-cols-2 justify-center place-items-center gap-4 lg:gap-12 px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32">
                 <ReviewItem author="Ghazaleh Eghlima" date="August 24">Probably the best Banh mi I've ever tasted! Normally I leave some bread out but this was literally the first time I devoured the entire thing so you can imagine how tasty it was!</ReviewItem>
                 <ReviewItem author="Maia Zethoven" date="December 24">The food was great! I came here with my girlfriend (who grew up in Vietnam) and we both loved it. The banh mi filling was tasty and fresh, and the bread was very good. The spring rolls were nice and crispy (freshly cooked). We spoke with the owner who was very friendly.</ReviewItem>
                 <ReviewItem author="Tereza Pokorna" date="November 24">Oh my god, this is definitely the best Banh Mi I have ever had! The prices are very good and the place is so cozy and looks very modern. Plus the owners and staff are all so nice and helpful. I can't wait to come back.</ReviewItem>
