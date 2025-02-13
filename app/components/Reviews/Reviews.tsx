@@ -1,6 +1,6 @@
 import ReviewItem from "./ReviewItem";
-import Headline from "../Headline";
 import AnimatedText from "../../AnimatedText";
+import ReviewHeadline from "./ReviewHeadline";
 import Button from '../Button';
 
 interface AnimatedTextProp {
@@ -11,17 +11,17 @@ const Reviews: React.FC<AnimatedTextProp> = ({ scrollRef }) => {
 
     return (
         <div className='relative bg-black-500'>
-            <Headline>
+            <ReviewHeadline className="pt-8 md:pt-16 lg:pt-32">
                 <AnimatedText transitionColor='#FFF8EE' scrollRef={scrollRef} data-en="St.Gallen loves Banh Mis! Here's what our customers say." data-de="St.Gallen liebt Banh Mis! Was unsere Kunden über uns sagen." />
-            </Headline>
-            <div className="relative grid grid-cols-2 justify-center place-items-center gap-4 lg:gap-12 px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32">
+            </ReviewHeadline>
+            <div className="relative grid md:grid-cols-2 justify-center place-items-center gap-4 lg:gap-12 px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32">
                 <ReviewItem author="Ghazaleh Eghlima" date="August 24">Probably the best Banh mi I've ever tasted! Normally I leave some bread out but this was literally the first time I devoured the entire thing so you can imagine how tasty it was!</ReviewItem>
                 <ReviewItem author="Maia Zethoven" date="December 24">The food was great! I came here with my girlfriend (who grew up in Vietnam) and we both loved it. The banh mi filling was tasty and fresh, and the bread was very good. The spring rolls were nice and crispy (freshly cooked). We spoke with the owner who was very friendly.</ReviewItem>
                 <ReviewItem author="Tereza Pokorna" date="November 24">Oh my god, this is definitely the best Banh Mi I have ever had! The prices are very good and the place is so cozy and looks very modern. Plus the owners and staff are all so nice and helpful. I can't wait to come back.</ReviewItem>
                 <ReviewItem author="Salvatore Saitta" date="October 24">Truly one of the best restaurants in st.gallen, the food is extremely good, the portions are generous and the pricing is nearly unbeatable. If you wish to have a reminding taste of Vietnam or explore your taste buds, definitely come here 🙌🙌</ReviewItem>
             </div>
             <div className='flex flex-col'>
-                <div className='flex flex-row items-baseline gap-8 px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32'>
+                <div className='flex flex-row items-baseline gap-8 px-4 md:px-8 lg:px-16'>
                     <p className='text-7xl lg:text-8xl font-semibold text-bmb-orange'>4.8</p>
                     <div className='flex flex-row gap-2 text-bmb-orange'>
                         <svg className='h-8 lg:h-10 w-8 lg:w-10' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,9 +42,9 @@ const Reviews: React.FC<AnimatedTextProp> = ({ scrollRef }) => {
                     </div>
                 </div>
                 <div>
-                    <Headline>
+                    <ReviewHeadline>
                         <AnimatedText transitionColor='#FFF8EE' scrollRef={scrollRef} data-de="auf Google Reviews von über 110 Nutzern." data-en="on Google Reviews by over 110 users."></AnimatedText>
-                    </Headline>
+                    </ReviewHeadline>
                     {/*<p className='text-8xl text-white-500 font-semibold'>on Google Reviews by over 110 users.</p>*/}
                 </div>
                 <div className='flex'>
