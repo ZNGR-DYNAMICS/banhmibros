@@ -1,16 +1,20 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
-type DateFormat = `${string} ${number}`;
-
-interface ReviewItemProps {
+type ReviewItemProps = {
     children: React.ReactNode;
     author: string;
-    date: DateFormat;
+    date: `${string} ${number}`;
 }
 
 const ReviewItem: React.FC<ReviewItemProps> = ({ children, author, date }) => {
     return (
-        <div className="h-full w-full flex flex-col justify-between rounded-3xl bg-white-500 p-8 gap-8 font-medium">
+        <motion.div 
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut'}}
+            viewport={{ once: false }}
+            className="h-full w-full flex flex-col justify-between rounded-3xl bg-white-500 p-8 gap-8 font-medium">
             <p className='font-poppins'>{children}</p>
             <div className='flex flex-col gap-2'>
                 <div className='flex flex-row gap-1'>
@@ -36,7 +40,7 @@ const ReviewItem: React.FC<ReviewItemProps> = ({ children, author, date }) => {
                     <p>{date}</p>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
