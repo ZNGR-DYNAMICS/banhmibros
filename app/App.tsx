@@ -5,7 +5,7 @@ import Headline from './components/Headline';
 import Menu from './components/Menu';
 import DatabaseViewer from './DatabaseViewer';
 import Navigation from './components/Navigation';
-import AnimatedText from './AnimatedText';
+import AnimatedText from './components/AnimatedText';
 import Button from './components/Button';
 import Reviews from './components/Reviews/Reviews';
 import Footer from './components/Footer';
