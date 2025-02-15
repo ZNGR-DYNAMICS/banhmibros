@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import AnimatedText, { AnimatedTextProps } from '../AnimatedText';
+import AnimatedText, { AnimatedTextProps } from './AnimatedText';
 
 interface HeadlineProps {
     children: React.ReactNode;

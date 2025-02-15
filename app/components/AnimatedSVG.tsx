@@ -18,7 +18,7 @@ const AnimatedSVGChild: React.FC<AnimatedSVGChildProps> = ({
     svgElement,
     index,
     progress,
-    transitionColor = "#1D1A17",
+    transitionColor = "#F19100",
 }) => {
     // Smooth the scroll progress value
     const smoothedProgress = useSpring(progress, { stiffness: 200, damping: 50 });
@@ -55,7 +55,7 @@ const AnimatedSVG: React.FC<AnimatedSVGProps> = ({
     const { scrollYProgress } = useScroll({
         target: containerRef,
         container: scrollRef,
-        offset: ["0 1", "0 0.25"],
+        offset: ["0 0.75", "0 0.5"],
         layoutEffect: false,
     });
 

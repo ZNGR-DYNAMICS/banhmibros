@@ -17,8 +17,8 @@ const ButtonTopRight: React.FC<ButtonProps> = ({ color = 'black-500', width = 'w
             y: 0,
             transition: {
                 type: "spring",
-                stiffness: 250,
-                damping: 20,
+                stiffness: 350,
+                damping: 30,
             },
         },
         hover: {
@@ -26,8 +26,8 @@ const ButtonTopRight: React.FC<ButtonProps> = ({ color = 'black-500', width = 'w
             x: 48,
             transition: {
                 type: "spring",
-                stiffness: 250,
-                damping: 20,
+                stiffness: 350,
+                damping: 30,
             },
         },
     };
@@ -70,13 +70,13 @@ const ButtonTopRight: React.FC<ButtonProps> = ({ color = 'black-500', width = 'w
                 animate={hover ? "hover" : "initial"}
             >
                 <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M11.6374 3.0404C11.6563 2.03968 12.4828 1.21313 13.4835 1.19424L33.9836 0.807452C34.9843 0.788568 35.7803 1.58451 35.7614 2.58523L35.3746 23.0853C35.3557 24.086 34.5291 24.9126 33.5284 24.9314C32.5277 24.9503 31.7318 24.1544 31.7506 23.1537L32.0549 7.02808L3.87622 35.2068C3.15525 35.9277 2.00797 35.9494 1.31371 35.2551C0.619443 34.5608 0.64109 33.4136 1.36206 32.6926L29.5407 4.51392L13.4152 4.81818C12.4144 4.83706 11.6185 4.04112 11.6374 3.0404Z"
                     fill="currentColor"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                 />
             </motion.svg>
             <motion.svg
@@ -89,13 +89,13 @@ const ButtonTopRight: React.FC<ButtonProps> = ({ color = 'black-500', width = 'w
                 animate={hover ? "hover" : "initial"}
             >
                 <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M11.6374 3.0404C11.6563 2.03968 12.4828 1.21313 13.4835 1.19424L33.9836 0.807452C34.9843 0.788568 35.7803 1.58451 35.7614 2.58523L35.3746 23.0853C35.3557 24.086 34.5291 24.9126 33.5284 24.9314C32.5277 24.9503 31.7318 24.1544 31.7506 23.1537L32.0549 7.02808L3.87622 35.2068C3.15525 35.9277 2.00797 35.9494 1.31371 35.2551C0.619443 34.5608 0.64109 33.4136 1.36206 32.6926L29.5407 4.51392L13.4152 4.81818C12.4144 4.83706 11.6185 4.04112 11.6374 3.0404Z"
                     fill="currentColor"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                 />
                 </motion.svg>
             </div>
