@@ -5,7 +5,7 @@ import './index.css';
 import '../fonts/circula.css';
 import '../fonts/poppins.css';
 import App from './App.tsx';
-import Menu from './components/Menu.tsx';
+import Menu from './components/Menu/Menu.tsx';
 
 const passwordPrompt = (): void => {
     const validPassword = "test";

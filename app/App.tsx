@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import './App.css';
 import Headline from './components/Headline';
-import Menu from './components/Menu';
+import Menu from './components/Menu/Menu';
 import DatabaseViewer from './DatabaseViewer';
 import Navigation from './components/Navigation';
 import AnimatedText from './components/AnimatedText';
