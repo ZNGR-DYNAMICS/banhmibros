@@ -1,7 +1,6 @@
 import ReviewItem from "./ReviewItem";
 import AnimatedText from "../../AnimatedText";
 import ReviewHeadline from "./ReviewHeadline";
-import Button from '../Button';
 import ButtonTopRight from "../ButtonTopRight";
 
 interface AnimatedTextProp {
