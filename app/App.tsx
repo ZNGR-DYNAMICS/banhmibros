@@ -86,7 +86,7 @@ function App() {
                         </a>
                     </div>
                 </header>
-                <main className='bg-white-500 flex flex-col gap-16 lg:gap-16' id='test'>
+                <main className='bg-white-500 flex flex-col' id='test'>
                     <Headline>
                         <AnimatedText scrollRef={scrollRef}
                             data-en="Authentic Vietnamese Streetfood has come to St.Gallen. Pick up your Banh Mi in store or order right to your doorstep."

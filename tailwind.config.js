@@ -18,12 +18,11 @@ export default {
     ],
     theme: {
         extend: {
-            fontFamily: {
-                circula: ['Circula', 'sans-serif'],
-                poppins: ['Poppins', 'sans-serif'],
+            scale: {
+                133: '1.33'
             },
-            fontSize: {
-                '10xl': '10rem',
+            borderRadius: {
+                '4xl': '2rem'
             },
             colors: {
                 black: {
@@ -57,12 +56,15 @@ export default {
                     green: '#498450',
                     dark_green: '#0D3633',
                 },
-
             },
-            scale: {
-                133: '1.33'
-            }
-        },
+            fontFamily: {
+                circula: ['Circula', 'sans-serif'],
+                poppins: ['Poppins', 'sans-serif'],
+            },
+            fontSize: {
+                '10xl': '10rem',
+            },
+        }
     },
     plugins: [
         plugin(function ({ addUtilities }) {

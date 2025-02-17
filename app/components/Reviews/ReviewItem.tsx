@@ -14,7 +14,7 @@ const ReviewItem: React.FC<ReviewItemProps> = ({ children, author, date }) => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: 'easeOut'}}
             viewport={{ once: false }}
-            className="h-full w-full flex flex-col justify-between rounded-3xl bg-white-500 p-8 gap-8 font-medium">
+            className="h-full w-full flex flex-col justify-between rounded-2xl md:rounded-4xl bg-white-500 p-4 md:p-8 gap-8 font-medium">
             <p className='font-poppins'>{children}</p>
             <div className='flex flex-col gap-2'>
                 <div className='flex flex-row gap-1'>
