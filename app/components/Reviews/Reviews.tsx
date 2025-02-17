@@ -21,7 +21,7 @@ const Reviews: React.FC<AnimatedTextProp> = ({ scrollRef }) => {
                 <ReviewItem author="Tereza Pokorna" date="November 24">Oh my god, this is definitely the best Banh Mi I have ever had! The prices are very good and the place is so cozy and looks very modern. Plus the owners and staff are all so nice and helpful. I can't wait to come back.</ReviewItem>
                 <ReviewItem author="Salvatore Saitta" date="October 24">Truly one of the best restaurants in st.gallen, the food is extremely good, the portions are generous and the pricing is nearly unbeatable. If you wish to have a reminding taste of Vietnam or explore your taste buds, definitely come here 🙌🙌</ReviewItem>
             </div>
-            <div className='flex flex-col'>
+            <div className='flex flex-col py-4 md:py-0 lg:py-0'>
                 <div className='flex flex-row items-baseline gap-8 px-4 md:px-8 lg:px-16'>
                     <p className='text-7xl lg:text-8xl font-semibold text-bmb-orange'>4.8</p>
                     <div className='flex flex-row gap-2 text-bmb-orange'>
@@ -50,11 +50,11 @@ const Reviews: React.FC<AnimatedTextProp> = ({ scrollRef }) => {
                     </div>
                 </div>
                 <div>
-                    <ReviewHeadline>
+                    <ReviewHeadline className="pb-8">
                         <AnimatedText transitionColor='#FFF8EE' scrollRef={scrollRef} data-de="auf Google Reviews von über 110 Nutzern." data-en="on Google Reviews by over 110 users."></AnimatedText>
                     </ReviewHeadline>
                 </div>
-                <div className='flex px-4 py-4 md:px-8 md:py-8 lg:px-16 lg:py-16'>
+                <div className='flex px-4 md:px-8 lg:px-16'>
                     <a target="_blank" href="https://www.google.com/maps/place/Banh+Mi+Bros/@47.4273363,9.3744299,386m/data=!3m1!1e3!4m18!1m9!3m8!1s0x479b1fb7cc166b77:0x648aa610c21baf71!2sBanh+Mi+Bros!8m2!3d47.4268735!4d9.3752029!9m1!1b1!16s%2Fg%2F11h818c1wc!3m7!1s0x479b1fb7cc166b77:0x648aa610c21baf71!8m2!3d47.4268735!4d9.3752029!9m1!1b1!16s%2Fg%2F11h818c1wc?entry=ttu&g_ep=EgoyMDI1MDIwOS4wIKXMDSoASAFQAw%3D%3D">
                         <ButtonTopRight width='w-48' color='white-500'>Leave a Review</ButtonTopRight>
                     </a>

@@ -17,7 +17,7 @@ const ReviewHeadline: React.FC<HeadlineProps> = ({ className, children }) => {
     }, []);
 
     return (
-        <div className={`${className} px-4 md:px-8 lg:px-16 font-poppins font-semibold text-3xl md:text-5xl lg:text-7xl text-black-500`}>
+        <div className={`${className} px-4 md:px-8 lg:px-16 font-poppins font-semibold text-4xl md:text-5xl lg:text-7xl text-black-500`}>
             {React.Children.map(children, (child) => {
                 if (!React.isValidElement(child)) return child;
                 
