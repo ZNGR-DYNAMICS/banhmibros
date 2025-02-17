@@ -37,7 +37,7 @@ function AnimatedMenuItem({ item, index }: AnimatedMenuItemProps) {
     const inView = useInView(ref, { amount: 0.2, once: false });
 
     return (
-        <div ref={ref} className="overflow-hidden background-blur-[128px]">
+        <div ref={ref} className="overflow-hidden">
             <motion.div
                 variants={horizontalVariants}
                 initial="hidden"
@@ -58,7 +58,7 @@ function AnimatedMenuItem({ item, index }: AnimatedMenuItemProps) {
 }
 export default function Menu() {
     // Demonstration Menu items
-    const menuItems: MenuItemType[] = [
+    /*const menuItems: MenuItemType[] = [
         {
             typeId: 1,
             title: "Tofu",
@@ -80,36 +80,121 @@ export default function Menu() {
             is_vegetarian: false,
             price: 10.95,
         },
-    ];
+    ];*/
 
     return (
-        <section className="relative w-full min-h-dvh text-white-500 bg-black-500">
-            {/* Sticky container for the background image (parallax effect) */}
-            <div className="sticky top-0 w-full h-screen">
+        // Outer section takes up the full viewport and allows vertical scrolling.
+        <section className="w-full h-screen overflow-y-scroll snap-y snap-mandatory">
+            {/* Section 1: Banh Mi Classics */}
+            <div className="relative w-full h-screen snap-start">
                 <img
                     src="./BanhMi.png"
-                    alt="Banh Mi"
-                    className="w-full h-full object-cover"
+                    alt="Banh Mi Classics"
+                    className="absolute inset-0 w-full h-full object-cover"
                 />
-            </div>
-
-            {/* Static text content (heading and paragraph) */}
-            <div className="relative -mt-[100dvh] flex flex-col md:flex-row z-10">
-                <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16">
-                <h1 className="font-circula text-8xl lg:text-9xl circula-extrabold">
-                    Banh Mi
-                </h1>
-                <p className="text-lg md:text-xl lg:text-2xl">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
-                    Quisque euismod orci in ligula hendrerit, in fermentum libero suscipit.
-                </p>
+                <div className="relative z-10 flex flex-col md:flex-row h-full text-white">
+                    {/* Title and Description */}
+                    <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16 flex-1">
+                        <h1 className="font-circula text-5xl lg:text-6xl">Banh Mi Classics</h1>
+                        <p className="text-lg md:text-xl lg:text-2xl">
+                            Experience the traditional flavors of our signature Banh Mi sandwiches.
+                        </p>
+                    </div>
+                    {/* Menu Items */}
+                    <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16 flex-1">
+                        <AnimatedMenuItem
+                        item={{
+                            typeId: 1,
+                            title: "Tofu",
+                            vietnameseName: "Banh Mi Chay",
+                            is_vegetarian: true,
+                            price: 9.95,
+                        }}
+                        index={0}
+                        />
+                        <AnimatedMenuItem
+                        item={{
+                            typeId: 2,
+                            title: "Pork",
+                            vietnameseName: "Banh Mi Thit",
+                            is_vegetarian: false,
+                            price: 11.95,
+                        }}
+                        index={1}
+                        />
+                    </div>
                 </div>
-
-                {/* Container for animated MenuItems */}
-                <div className="flex flex-col">
-                {menuItems.map((item, index) => (
-                    <AnimatedMenuItem key={item.typeId} item={item} index={index} />
-                ))}
+            </div>
+        
+            {/* Section 2: Modern Twists */}
+            <div className="relative w-full h-screen snap-start">
+                <img
+                    src="./BanhMi.png"
+                    alt="Modern Twists"
+                    className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="relative z-10 flex flex-col md:flex-row h-full text-white">
+                    {/* Title and Description */}
+                    <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16 flex-1">
+                        <h1 className="font-circula text-5xl lg:text-6xl">Modern Twists</h1>
+                        <p className="text-lg md:text-xl lg:text-2xl">
+                        Discover our innovative takes on the classic, with fresh ingredients and bold flavors.
+                        </p>
+                    </div>
+                    {/*Menu Items*/}
+                    <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16 flex-1">
+                        <AnimatedMenuItem
+                        item={{
+                            typeId: 3,
+                            title: "Chicken",
+                            vietnameseName: "Banh Mi Ga",
+                            is_vegetarian: false,
+                            price: 10.95,
+                        }}
+                        index={0}
+                        />
+                        <AnimatedMenuItem
+                        item={{
+                            typeId: 4,
+                            title: "Beef",
+                            vietnameseName: "Banh Mi Bo",
+                            is_vegetarian: false,
+                            price: 12.95,
+                        }}
+                        index={1}
+                        />
+                    </div>
+                </div>
+            </div>
+        
+            {/* Section 3: Vegan Delights */}
+            <div className="relative w-full h-screen snap-start">
+                <img
+                    src="./BanhMi.png"
+                    alt="Vegan Delights"
+                    className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="relative z-10 flex flex-col md:flex-row h-full text-white">
+                    {/* Title and Description */}
+                    <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16 flex-1">
+                        <h1 className="font-circula text-5xl lg:text-6xl">Vegan Delights</h1>
+                        <p className="text-lg md:text-xl lg:text-2xl">
+                        Savor our delicious vegan options that bring out the best in flavor and texture.
+                        </p>
+                    </div>
+                    {/*Menu Items*/}
+                    <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16 flex-1">
+                        <AnimatedMenuItem
+                        item={{
+                            typeId: 5,
+                            title: "Mushroom",
+                            vietnameseName: "Banh Mi Nam",
+                            is_vegetarian: true,
+                            price: 9.95,
+                        }}
+                        index={0}
+                        />
+                    </div>
                 </div>
             </div>
         </section>
