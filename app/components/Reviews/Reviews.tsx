@@ -22,7 +22,7 @@ const Reviews: React.FC<AnimatedTextProp> = ({ scrollRef }) => {
                 <ReviewItem author="Salvatore Saitta" date="October 24">Truly one of the best restaurants in st.gallen, the food is extremely good, the portions are generous and the pricing is nearly unbeatable. If you wish to have a reminding taste of Vietnam or explore your taste buds, definitely come here 🙌🙌</ReviewItem>
             </div>
             <div className='flex flex-col py-4 md:py-0 lg:py-0'>
-                <div className='flex flex-row items-baseline gap-8 px-4 md:px-8 lg:px-16'>
+                <div className='flex flex-row items-baseline gap-4 md:gap-8 px-4 md:px-8 lg:px-16'>
                     <p className='text-7xl lg:text-8xl font-semibold text-bmb-orange'>4.8</p>
                     <div className='flex flex-row gap-2 text-bmb-orange'>
                         <AnimatedSVG scrollRef={scrollRef}>
