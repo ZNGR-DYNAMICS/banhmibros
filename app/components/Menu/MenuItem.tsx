@@ -39,9 +39,9 @@ const MenuItem: React.FC<MenuItemProps> = ({ title, vietnameseName, is_vegetaria
                     {price}
                 </div>
             </div>
-            <div className='w-full'>
-                <svg width='100%' height="2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 1H604.001" stroke="#FFF8EE" strokeWidth="2" strokeDasharray="4 4"/>
+            <div className='w-full bg-[#ffffff00] backdrop-blur-[20px]'>
+                <svg width="100%" height="2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 1H2400.001" stroke="#FFF8EE" strokeWidth="2" strokeDasharray="4 4"/>
                 </svg>
             </div>
         </div>
