@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import AnimatedMenuItem from './AnimatedMenuItem';
 
 type MenuItemType = {
@@ -16,9 +16,11 @@ type MenuSectionProps = {
     items: MenuItemType[];
     imgSrc: string;
     motionProps: any;
+    containerRef: React.RefObject<HTMLDivElement>;
 }
 
-const MenuSection: React.FC<MenuSectionProps> = ({ title, description, items, imgSrc, motionProps }) => {
+const MenuSection: React.FC<MenuSectionProps> = ({ title, description, items, imgSrc, motionProps, containerRef }) => {
+    const { scrollYProgress } = useScroll({ container: containerRef, layoutEffect: false })
     return (
         <motion.div className="absolute inset-0" {...motionProps}>
             <div className="relative w-full h-screen">
@@ -33,7 +35,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, description, items, im
                         </div>
                         <div className="flex flex-col flex-1">
                             {items.map((item, index) => (
-                                <AnimatedMenuItem key={item.typeId} item={item} index={index} />
+                                <AnimatedMenuItem key={item.typeId} item={item} index={index} scrollYProgress={scrollYProgress} />
                             ))}
                         </div>
                     </div>
