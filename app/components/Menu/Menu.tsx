@@ -54,48 +54,58 @@ const Menu: React.FC<MenuProps> = ({ scrollRef }) => {
     return (
         <div className="relative">
             <div className="sticky top-0 h-screen w-full">
-                <motion.div className="absolute inset-0 z-10" style={{ opacity: section1Opacity, pointerEvents: useTransform(section2Opacity, o => o > 0.5 ? 'auto' : 'none') }}>
+                <motion.div className="absolute inset-0 z-10" style={{ opacity: section1Opacity }}>
                     <div className="relative w-full h-screen">
-                        <img src="./BanhMi.png" alt="Banh Mi Classics" className="absolute inset-0 w-full h-full object-cover" />
-                        <div className="relative z-10 flex flex-col md:flex-row h-full text-white">
-                            <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16 flex-1">
-                                <h1 className="font-circula text-5xl lg:text-6xl">Banh Mi Classics</h1>
-                                <p className="text-lg md:text-xl lg:text-2xl">Experience the traditional flavors of our signature Banh Mi sandwiches.</p>
+                        <img src="./BanhMi.png" alt="Banh Mi" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="relative flex flex-col text-white-500">
+                            <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16">
+                                <h1 className="font-circula circula-bold md:circula-extrabold lg:circula-black text-6xl md:text-7xl lg:text-10xl">Banh Mi</h1>
                             </div>
-                            <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16 flex-1">
-                                <AnimatedMenuItem item={{ typeId: 1, title: "Tofu", vietnameseName: "Banh Mi Chay", is_vegetarian: true, price: 9.95 }} index={0} />
-                                <AnimatedMenuItem item={{ typeId: 2, title: "Pork", vietnameseName: "Banh Mi Thit", is_vegetarian: false, price: 11.95 }} index={1} />
+                            <div className="flex flex-row">
+                                <div className="px-4 md:px-8 lg:px-16">
+                                    <p className="text-lg md:text-xl lg:text-2xl">Experience the traditional flavors of our signature Banh Mi sandwiches.</p>
+                                </div>
+                                <div className="flex flex-col flex-1">
+                                    <AnimatedMenuItem item={{ typeId: 1, title: "Tofu", vietnameseName: "Banh Mi Chay", is_vegetarian: true, price: 9.95 }} index={0} />
+                                    <AnimatedMenuItem item={{ typeId: 2, title: "Pork", vietnameseName: "Banh Mi Thit", is_vegetarian: false, price: 11.95 }} index={1} />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </motion.div>
-
-                <motion.div className="absolute inset-0 z-20" style={{ y: section2Y, opacity: section2Opacity, pointerEvents: useTransform(section2Opacity, o => o > 0.5 ? 'auto' : 'none') }}>
+                <motion.div className="absolute inset-0 z-20" style={{ y: section2Y, opacity: section2Opacity }}>
                     <div className="relative w-full h-screen">
-                        <img src="./BanhMi.png" alt="Modern Twists" className="absolute inset-0 w-full h-full object-cover" />
-                        <div className="relative z-10 flex flex-col md:flex-row h-full text-white">
-                            <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16 flex-1">
-                                <h1 className="font-circula text-5xl lg:text-6xl">Modern Twists</h1>
-                                <p className="text-lg md:text-xl lg:text-2xl">Discover our innovative takes on the classic, with fresh ingredients and bold flavors.</p>
+                        <img src="./BanhMi.png" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="relative flex flex-col text-white-500">
+                            <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16">
+                                <h1 className="font-circula circula-bold md:circula-extrabold lg:circula-black text-6xl md:text-7xl lg:text-10xl">Pho</h1>
                             </div>
-                            <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16 flex-1">
-                                <AnimatedMenuItem item={{ typeId: 3, title: "Chicken", vietnameseName: "Banh Mi Ga", is_vegetarian: false, price: 10.95 }} index={0} />
-                                <AnimatedMenuItem item={{ typeId: 4, title: "Beef", vietnameseName: "Banh Mi Bo", is_vegetarian: false, price: 12.95 }} index={1} />
+                            <div className="flex flex-row">
+                                <div className="px-4 md:px-8 lg:px-16">
+                                    <p className="text-lg md:text-xl lg:text-2xl">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <div className="flex flex-col flex-1">
+                                    <AnimatedMenuItem item={{ typeId: 3, title: "Chicken", vietnameseName: "Banh Mi Ga", is_vegetarian: false, price: 10.95 }} index={0} />
+                                    <AnimatedMenuItem item={{ typeId: 4, title: "Beef", vietnameseName: "Banh Mi Bo", is_vegetarian: false, price: 12.95 }} index={1} />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </motion.div>
-
-                <motion.div className="absolute inset-0 z-30" style={{ y: section3Y, opacity: section3Opacity, pointerEvents: useTransform(section2Opacity, o => o > 0.5 ? 'auto' : 'none') }}>
+                <motion.div className="absolute inset-0 z-30" style={{ y: section3Y, opacity: section3Opacity }}>
                     <div className="relative w-full h-screen">
-                        <img src="./BanhMi.png" alt="Vegan Delights" className="absolute inset-0 w-full h-full object-cover" />
-                        <div className="relative z-10 flex flex-col md:flex-row h-full text-white">
-                            <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16 flex-1">
-                                <h1 className="font-circula text-5xl lg:text-6xl">Vegan Delights</h1>
-                                <p className="text-lg md:text-xl lg:text-2xl">Savor our delicious vegan options that bring out the best in flavor and texture.</p>
+                        <img src="./BanhMi.png" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className="relative flex flex-col text-white-500">
+                            <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16">
+                                <h1 className="font-circula circula-bold md:circula-extrabold lg:circula-black text-6xl md:text-7xl lg:text-10xl">Pho</h1>
                             </div>
-                            <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16 flex-1">
-                                <AnimatedMenuItem item={{ typeId: 5, title: "Mushroom", vietnameseName: "Banh Mi Nam", is_vegetarian: true, price: 9.95 }} index={0} />
+                            <div className="flex flex-row">
+                                <div className="px-4 md:px-8 lg:px-16">
+                                    <p className="text-lg md:text-xl lg:text-2xl">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam, praesentium!</p>
+                                </div>
+                                <div className="flex flex-col flex-1">
+                                    <AnimatedMenuItem item={{ typeId: 5, title: "Mushroom", vietnameseName: "Banh Mi Nam", is_vegetarian: true, price: 9.95 }} index={0} />
+                                </div>
                             </div>
                         </div>
                     </div>
