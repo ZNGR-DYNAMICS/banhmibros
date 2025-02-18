@@ -13,7 +13,7 @@ const Reviews: React.FC<AnimatedTextProp> = ({ scrollRef }) => {
     return (
         <div className='relative py-8 md:py-16 lg:py-32 bg-black-500'>
             <ReviewHeadline>
-                <AnimatedText transitionColor='#FFF8EE' scrollRef={scrollRef} data-en="St.Gallen loves Banh Mis! Here's what our customers say." data-de="St.Gallen liebt Banh Mis! Was unsere Kunden über uns sagen." />
+                <AnimatedText transitionColor='#FFF8EE' scrollRef={scrollRef} data-en="St.Gallen loves Banh Mis! Here's what our clients say." data-de="St.Gallen liebt Banh Mis! Was unsere Kunden über uns sagen." />
             </ReviewHeadline>
             <div className="relative grid md:grid-cols-2 justify-center place-items-center gap-4 lg:gap-12 px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32">
                 <ReviewItem author="Ghazaleh Eghlima" date="August 24">Probably the best Banh mi I've ever tasted! Normally I leave some bread out but this was literally the first time I devoured the entire thing so you can imagine how tasty it was!</ReviewItem>
