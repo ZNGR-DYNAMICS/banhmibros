@@ -27,7 +27,7 @@ const Menu: React.FC<MenuProps> = ({ scrollRef }) => {
                     ]}
                     imgSrc="./BanhMi.png"
                     motionProps={{ style: { opacity: section1Opacity } }}
-                    containerRef={scrollRef}
+                    scrollRef={scrollRef}
                 />
                 <MenuSection
                     title="Pho"
@@ -38,7 +38,7 @@ const Menu: React.FC<MenuProps> = ({ scrollRef }) => {
                     ]}
                     imgSrc="./BanhMi.png"
                     motionProps={{ style: { y: section2Y, opacity: section2Opacity } }}
-                    containerRef={scrollRef}
+                    scrollRef={scrollRef}
                 />
                 <MenuSection
                     title="Pho"
@@ -48,7 +48,7 @@ const Menu: React.FC<MenuProps> = ({ scrollRef }) => {
                     ]}
                     imgSrc="./BanhMi.png"
                     motionProps={{ style: { y: section3Y, opacity: section3Opacity } }}
-                    containerRef={scrollRef}
+                    scrollRef={scrollRef}
                 />
             </div>
             <div className="h-[800dvh]"></div>

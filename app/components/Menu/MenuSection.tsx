@@ -16,11 +16,11 @@ type MenuSectionProps = {
     items: MenuItemType[];
     imgSrc: string;
     motionProps: any;
-    containerRef: React.RefObject<HTMLDivElement>;
+    scrollRef: React.RefObject<HTMLDivElement>;
 }
 
-const MenuSection: React.FC<MenuSectionProps> = ({ title, description, items, imgSrc, motionProps, containerRef }) => {
-    const { scrollYProgress } = useScroll({ container: containerRef, layoutEffect: false })
+const MenuSection: React.FC<MenuSectionProps> = ({ title, description, items, imgSrc, motionProps, scrollRef }) => {
+    const { scrollYProgress } = useScroll({ container: scrollRef, layoutEffect: false })
     return (
         <motion.div className="absolute inset-0" {...motionProps}>
             <div className="relative w-full h-screen">
