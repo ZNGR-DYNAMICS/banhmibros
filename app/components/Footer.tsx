@@ -4,7 +4,7 @@ export default function Footer(){
 
     return (
         <section className="relative flex flex-col p-8 md:p-16 bg-black-300 text-white-500">
-            <div className="absolute top-0 left-0 h-0.5 w-full bg-gray-500"></div>
+            <div className="absolute top-0 left-0 h-0.5 w-full bg-gray-500"></div> {/*Line*/}
             <div className="flex flex-row justify-between md:justify-normal md:gap-16 lg:gap-32">
                 <div className="hidden md:flex flex-col gap-1">
                     <p>Banh Mi Bros</p>
