@@ -116,8 +116,7 @@ function App() {
                         </div>
                         <div className="absolute bottom-0 left-0 h-0.5 w-full bg-gray-500"></div> {/*Line*/}
                     </main>
-                    <footer
-                        className='sticky bottom-0 left-0 w-full -z-10 pointer-events-auto'>
+                    <footer className='sticky bottom-0 left-0 w-full -z-10 pointer-events-auto'>
                         <Footer />
                     </footer>
                 </div>

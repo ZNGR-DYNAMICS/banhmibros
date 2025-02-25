@@ -25,7 +25,7 @@ export default function Footer(){
                     <Link href="/facebook">FaceBook</Link>
                 </div>
                 <div className='hidden md:flex ml-auto text-gray-500'>
-                    <a href="https://zngr-dynamics.ch">Site by <span className="font-medium text-white-500">ZNGR</span></a>
+                    <a href="https://zngr-dynamics.ch">Site by <span className='font-medium text-white-500'>ZNGR</span></a>
                 </div>
             </div>
             <div className="flex flex-row py-16 gap-16 justify-between md:justify-normal">

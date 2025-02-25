@@ -92,6 +92,6 @@ export default {
                     textStroke: '0.25rem currentColor',
                 },
             });
-        }),
+        })
     ]
 }
