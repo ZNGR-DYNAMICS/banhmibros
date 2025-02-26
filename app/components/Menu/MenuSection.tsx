@@ -1,4 +1,4 @@
-import { motion, useScroll } from 'framer-motion';
+import { motion, useTransform } from 'framer-motion';
 import AnimatedMenuItem from './AnimatedMenuItem';
 
 type MenuItemType = {
@@ -16,18 +16,22 @@ type MenuSectionProps = {
     items: MenuItemType[];
     imgSrc: string;
     motionProps: any;
-    scrollRef: React.RefObject<HTMLDivElement>;
+    mainScrollYProgress: any;
+    animationRange: [number, number];
 }
 
-const MenuSection: React.FC<MenuSectionProps> = ({ title, description, items, imgSrc, motionProps, scrollRef }) => {
-    const { scrollYProgress } = useScroll({ container: scrollRef, layoutEffect: false })
+const MenuSection: React.FC<MenuSectionProps> = ({ title, description, items, imgSrc, motionProps, mainScrollYProgress, animationRange }) => {
+    const localScrollProgress = useTransform(mainScrollYProgress, animationRange, [0, 1]);
+
     return (
         <motion.div className="absolute inset-0" {...motionProps}>
-            <div className="relative w-full h-screen">
+            <div className='relative w-full h-screen overflow-hidden'>
                 <img src={imgSrc} alt={title} className="absolute inset-0 w-full h-full object-cover" />
-                <div className="relative flex flex-col text-white-500">
+                <div className="relative flex h-full flex-col text-white-500">
                     <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16">
-                        <h1 className="font-circula circula-bold md:circula-extrabold lg:circula-black text-6xl md:text-7xl lg:text-10xl">{title}</h1>
+                        <h1 className="font-circula circula-bold md:circula-extrabold lg:circula-black text-6xl md:text-7xl lg:text-10xl">
+                            {title}
+                        </h1>
                     </div>
                     <div className="flex flex-row">
                         <div className="px-4 md:px-8 lg:px-16">
@@ -35,7 +39,12 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, description, items, im
                         </div>
                         <div className="flex flex-col flex-1">
                             {items.map((item, index) => (
-                                <AnimatedMenuItem key={item.typeId} item={item} index={index} scrollYProgress={scrollYProgress} />
+                                <AnimatedMenuItem
+                                    key={item.typeId}
+                                    item={item}
+                                    index={index}
+                                    scrollProgress={localScrollProgress}
+                                />
                             ))}
                         </div>
                     </div>

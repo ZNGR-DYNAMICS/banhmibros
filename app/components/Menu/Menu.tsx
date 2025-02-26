@@ -9,15 +9,18 @@ const Menu: React.FC<MenuProps> = ({ scrollRef }) => {
     if (!scrollRef) return null;
     const { scrollYProgress } = useScroll({ container: scrollRef, layoutEffect: false });
 
+    const section1Y = useTransform(scrollYProgress, [0, 0.1], ["0vh", "0vh"]);
     const section1Opacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
-    const section2Y = useTransform(scrollYProgress, [0.2, 0.3], ["100vh", "0vh"]);
-    const section2Opacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-    const section3Y = useTransform(scrollYProgress, [0.4, 0.5], ["100vh", "0vh"]);
-    const section3Opacity = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
+
+    const section2Y = useTransform(scrollYProgress, [0.3, 0.4], ["100vh", "0vh"]);
+    const section2Opacity = useTransform(scrollYProgress, [0.3, 0.4], [1, 1]);
+
+    const section3Y = useTransform(scrollYProgress, [0.6, 0.7], ["100vh", "0vh"]);
+    const section3Opacity = useTransform(scrollYProgress, [0.6, 0.7], [1, 1]);
 
     return (
         <div className="relative">
-            <div className="sticky top-0 h-screen w-full">
+            <div className="sticky top-0 h-screen w-full overflow-y-hidden">
                 <MenuSection
                     title="Banh Mi"
                     description="Experience the traditional flavors of our signature Banh Mi sandwiches."
@@ -27,8 +30,9 @@ const Menu: React.FC<MenuProps> = ({ scrollRef }) => {
                         { typeId: 3, title: "Pork", vietnameseName: "Banh Mi Thit", is_vegetarian: false, price: 11.95 }
                     ]}
                     imgSrc="./BanhMi.png"
-                    motionProps={{ style: { opacity: section1Opacity } }}
-                    scrollRef={scrollRef}
+                    motionProps={{ style: { y: section1Y, opacity: section1Opacity } }}
+                    mainScrollYProgress={scrollYProgress}
+                    animationRange={[0.2, 0.3]}
                 />
                 <MenuSection
                     title="Pho"
@@ -39,7 +43,8 @@ const Menu: React.FC<MenuProps> = ({ scrollRef }) => {
                     ]}
                     imgSrc="./BanhMi.png"
                     motionProps={{ style: { y: section2Y, opacity: section2Opacity } }}
-                    scrollRef={scrollRef}
+                    mainScrollYProgress={scrollYProgress}
+                    animationRange={[0.4, 0.5]}
                 />
                 <MenuSection
                     title="Pho"
@@ -49,7 +54,8 @@ const Menu: React.FC<MenuProps> = ({ scrollRef }) => {
                     ]}
                     imgSrc="./BanhMi.png"
                     motionProps={{ style: { y: section3Y, opacity: section3Opacity } }}
-                    scrollRef={scrollRef}
+                    mainScrollYProgress={scrollYProgress}
+                    animationRange={[0.7, 0.8]}
                 />
             </div>
             <div className="h-[800dvh]"></div>
