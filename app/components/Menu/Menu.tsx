@@ -7,7 +7,6 @@ type MenuProps = {
 
 const Menu: React.FC<MenuProps> = ({ scrollRef }) => {
     const { scrollYProgress } = useScroll({ container: scrollRef, layoutEffect: false });
-    if (!scrollRef) return null;
 
     const section1Opacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
     const section2Y = useTransform(scrollYProgress, [0.2, 0.3], ["100vh", "0vh"]);
