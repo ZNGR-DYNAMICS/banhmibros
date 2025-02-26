@@ -2,10 +2,11 @@ import { useScroll, useTransform } from "framer-motion";
 import MenuSection from "./MenuSection";
 
 type MenuProps = {
-    scrollRef: React.RefObject<HTMLDivElement>;
+    scrollRef?: React.RefObject<HTMLDivElement>;
 };
 
 const Menu: React.FC<MenuProps> = ({ scrollRef }) => {
+    if (!scrollRef) return null;
     const { scrollYProgress } = useScroll({ container: scrollRef, layoutEffect: false });
 
     const section1Opacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
