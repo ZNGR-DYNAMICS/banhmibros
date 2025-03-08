@@ -1,23 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useTranslation } from '../../utils/translation';
 
-type Language = 'en' | 'de';
 const dateDe = '8. März 2025';
 const dateEn = 'March 8th 2025';
 
 const Legal: React.FC = () => {
-    const [language] = useState<Language>(() => navigator.language.startsWith('de') ? 'de' : 'en');
-
-    useEffect(() => {
-        const translateableElements = document.querySelectorAll<HTMLElement>('[data-en], [data-de]');
-
-        translateableElements.forEach(element => {
-            const text = element.getAttribute(`data-${language}`);
-            if (text) {
-                element.textContent = text;
-            }
-        });
-    }, [language]);
-
+    useTranslation();
+    
     return (
         <div className='flex flex-col bg-white-500 p-4 md:p-8 lg:p-16 gap-8 text-black-500'>
             <header className='flex flex-col gap-4'>
@@ -54,6 +42,10 @@ const Legal: React.FC = () => {
             </div>
             <div className='flex flex-col gap-4'>
                 <h2 data-en="Privacy Policy" data-de="Datenschutz"/>
+                <p
+                    data-en="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique sapiente mollitia hic. Hic incidunt libero corporis maiores nostrum a voluptates pariatur dolores in, repudiandae odio aperiam, veniam voluptatibus atque rerum enim iste eum dicta, est ad unde voluptate saepe! Quisquam doloribus a amet animi deleniti? Dolorum cumque animi eum porro."
+                    data-de="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique sapiente mollitia hic. Hic incidunt libero corporis maiores nostrum a voluptates pariatur dolores in, repudiandae odio aperiam, veniam voluptatibus atque rerum enim iste eum dicta, est ad unde voluptate saepe! Quisquam doloribus a amet animi deleniti? Dolorum cumque animi eum porro."
+                />
             </div>
         </div>
     )
