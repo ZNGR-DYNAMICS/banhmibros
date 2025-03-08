@@ -1,10 +1,10 @@
-name: Preview Build and Deploy
+name: Preview Test Build Deploy
 
 on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  build-test-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -12,21 +12,27 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # 2 Install node
+    # 2 Install node.js
     - name: Install Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 22
     
-    # 3 Install dependencies, build app
-    - name: Install dependencies and build
+    # 3 Install dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # 4 Run tests
+    - name: Run tests
+      run: npm test
+
+    # 5 Build app
+    - name: Build app
       env:
         CI: false
-      run: |
-        npm install
-        npm run build
-
-    # 4 Copy api files and dist folder to preview
+      run: npm run build
+    
+    # 6 Copy api files and dist folder to preview
     - name: Deploy to preview branch
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
