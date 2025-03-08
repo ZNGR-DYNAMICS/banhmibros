@@ -25,7 +25,9 @@ export default function Footer(){
                     <Link href="/facebook">FaceBook</Link>
                 </div>
                 <div className='hidden md:flex ml-auto text-gray-500'>
-                    <a href="https://zngr-dynamics.ch">Site by <span className='font-medium text-white-500'>ZNGR</span></a>
+                    <div className='flex h-fit w-fit'>
+                        <a className='hover:[text-shadow:_0_1px_2px_#FFF8EE] transition-all duration-300 hover:text-white-500' href="https://zngr-dynamics.ch">Site by <span className='font-medium text-white-500'>ZNGR</span></a>
+                    </div>
                 </div>
             </div>
             <div className="flex flex-row py-16 gap-16 justify-between md:justify-normal">
@@ -33,7 +35,7 @@ export default function Footer(){
                 <Link href="/legal" data-en="Privacy Policy" data-de="Datenschutz">Privacy Policy</Link>
             </div>
             <div className='flex flex-row justify-between text-gray-500'>
-                <p className='text-sm md:text-base'>Banh Mi Bros © 2024</p>
+                <p className='text-sm md:text-base'>Banh Mi Bros © 2025</p>
                 <a className='md:hidden' href="https://zngr-dynamics.ch">Site by <span className="font-medium text-white-500">ZNGR</span></a>
             </div>
             <div>
