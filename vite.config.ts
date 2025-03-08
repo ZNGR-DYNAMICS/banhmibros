@@ -11,6 +11,12 @@ export default defineConfig(({ mode }) => {
         },
         define: {
             'process.env': env
+        },
+        test: {
+            globals: true,
+            environment: 'jsdom',
+            setupFiles: './tests/setupTests.ts',
+            include: ['**/*.test.{ts,tsx}']
         }
     }
 })
