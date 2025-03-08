@@ -98,7 +98,7 @@ function App() {
                         </Headline>
                         <section>
                             <Menu scrollRef={scrollRef} />
-                        </section>
+                        </section>{/*}
                         <div className='px-4 md:px-8 lg:px-16 font-poppins font-semibold text-5xl md:text-6xl lg:text-7xl text-black-500'>
                             <h2>
                                 Quality before quantity. 
@@ -110,7 +110,7 @@ function App() {
                                 We hand-craft your Banh Mi only with the best ingredients. 
                             </h2>
                         </div>
-                        <DatabaseViewer />
+                        <DatabaseViewer />{*/}
                         <div>
                             <Reviews scrollRef={scrollRef}/>
                         </div>
