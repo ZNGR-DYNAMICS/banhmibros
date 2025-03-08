@@ -57,16 +57,16 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, description, items, im
         <motion.div className="absolute inset-0" {...motionProps}>
             <div className='relative w-full h-screen overflow-hidden'>
                 <img src={imgSrc} alt={title} className="absolute inset-0 w-full h-full object-cover" />
-                <div className="relative flex h-full flex-col text-white-500">
-                    <div className="flex flex-col gap-4 p-4 md:p-8 lg:p-16">
+                <div className="relative h-full flex flex-row text-white-500">
+                    <div className="flex flex-col gap-4 md:gap-8 lg:gap-16 p-4 md:p-8 lg:p-16">
                         <h1 className="font-circula circula-bold md:circula-extrabold lg:circula-black text-6xl md:text-7xl lg:text-10xl">
                             {title}
                         </h1>
-                    </div>
-                    <div className="flex flex-row">
-                        <div className="px-4 md:px-8 lg:px-16">
+                        <div className="">
                             <p className="text-lg md:text-xl lg:text-2xl">{description}</p>
                         </div>
+                    </div>
+                    <div className="flex ml-auto flex-row bg-[#ffffff00] backdrop-blur-[16px] opacity-100">
                         <div className="flex flex-col flex-1">
                             {items.map((item, index) => (
                                 <AnimatedMenuItem

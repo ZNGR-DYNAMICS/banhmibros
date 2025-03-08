@@ -10,9 +10,9 @@ interface MenuItemProps {
 const MenuItem: React.FC<MenuItemProps> = ({ title, vietnameseName, is_vegetarian, is_hot, price }) => {
     return (
         <div className="relative">
-            <div className='min-w-[480px] flex bg-[#ffffff00] backdrop-blur-[20px] p-4 font-poppins'>
+            <div className='min-w-full lg:min-w-[480px] flex p-4 md:p-8 font-poppins'>
                 <div className='flex flex-col flex-1'>
-                    <div className='inline-flex gap-2 font-medium'>
+                    <div className='inline-flex gap-2 font-medium text-lg md:text-xl'>
                         {title}
                         <div className='inline-flex'>
                             {is_vegetarian == true
@@ -31,17 +31,17 @@ const MenuItem: React.FC<MenuItemProps> = ({ title, vietnameseName, is_vegetaria
                             }
                         </div>
                     </div>
-                    <div className='font-light'>
+                    <div className='font-light text-base md:text-lg'>
                         {vietnameseName}
                     </div>
                 </div>
-                <div className='flex items-end'>
+                <div className='flex items-end text-base md:text-lg'>
                     {price}
                 </div>
             </div>
-            <div className='w-full bg-[#ffffff00] backdrop-blur-[20px]'>
-                <svg width="100%" height="2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 1H2400.001" stroke="#FFF8EE" strokeWidth="2" strokeDasharray="4 4"/>
+            <div className='px-4 md:px-8'>
+                <svg width="100%" height="1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 1H2400.001" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4"/>
                 </svg>
             </div>
         </div>
