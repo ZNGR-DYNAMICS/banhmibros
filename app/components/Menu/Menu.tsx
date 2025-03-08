@@ -23,7 +23,7 @@ const Menu: React.FC<MenuProps> = ({ scrollRef }) => {
             <div className="sticky top-0 h-screen w-full overflow-y-hidden">
                 <MenuSection
                     title="Banh Mi"
-                    description="Experience the traditional flavors of our signature Banh Mi sandwiches."
+                    description="Handmade sandwich featuring a crispy baguette filled with Vietnamese vegetarian pate, cucumber, pickled vegetable, coriander, a splash of Asian mayo, and your featured filling."
                     items={[
                         { typeId: 1, title: "Tofu", vietnameseName: "Banh Mi Chay", is_vegetarian: true, price: 9.95 },
                         { typeId: 2, title: "Pork", vietnameseName: "Banh Mi Thit", is_vegetarian: false, price: 11.95 },
