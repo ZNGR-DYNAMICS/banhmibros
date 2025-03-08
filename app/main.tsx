@@ -6,6 +6,7 @@ import '../fonts/circula.css';
 import '../fonts/poppins.css';
 import App from './App.tsx';
 import Menu from './components/Menu/Menu.tsx';
+import Legal from './components/Legal/Legal.tsx';
 
 const passwordPrompt = (): void => {
     const validPassword = "test";
@@ -33,6 +34,7 @@ createRoot(document.getElementById('root')!).render(
             <Routes>
                 <Route path="/" element={<App />} />
                 <Route path="/menu" element={<Menu />} />
+                <Route path="/legal" element={<Legal />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </BrowserRouter>

@@ -9,4 +9,12 @@
     h2, h3, p, a {
         font-family: 'Poppins';
     }
+    h2{
+        @apply font-bold;
+        @apply text-2xl;
+    }
+    h3{
+        @apply font-semibold;
+        @apply text-lg;
+    }
 }
