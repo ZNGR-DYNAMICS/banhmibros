@@ -20,6 +20,36 @@ type MenuSectionProps = {
     animationRange: [number, number];
 }
 
+/**
+ * A full-screen animated menu section with scroll-linked transitions
+ * 
+ * @remarks
+ * Requires Framer Motion's ScrollYProgress context. Should be used within
+ * an AnimatedScrollContainer component for proper scroll tracking.
+ * 
+ * @example
+ * ```tsx
+ * <MenuSection
+ *   title="Desserts"
+ *   description="Sweet endings"
+ *   items={dessertItems}
+ *   imgSrc="/desserts-bg.jpg"
+ *   motionProps={springAnimation}
+ *   mainScrollYProgress={scrollProgress}
+ *   animationRange={[0.2, 0.4]}
+ * />
+ * ```
+ * 
+ * @param title - Section heading displayed in large text
+ * @param description - Brief section description
+ * @param items - Array of menu items to display
+ * @param imgSrc - Background image URL for the section
+ * @param motionProps - Framer Motion animation configuration
+ * @param mainScrollYProgress - Scroll progress reference (0-1 range)
+ * @param animationRange - Scroll position range [start, end] for animations
+ * 
+ * @returns React component with scroll-linked animations
+ */
 const MenuSection: React.FC<MenuSectionProps> = ({ title, description, items, imgSrc, motionProps, mainScrollYProgress, animationRange }) => {
     const localScrollProgress = useTransform(mainScrollYProgress, animationRange, [0, 1]);
 
