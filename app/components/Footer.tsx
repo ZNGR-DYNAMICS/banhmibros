@@ -35,8 +35,8 @@ export default function Footer(){
                 <Link href="/legal" data-en="Privacy Policy" data-de="Datenschutz">Privacy Policy</Link>
             </div>
             <div className='flex flex-row justify-between text-gray-500'>
-                <p className='text-sm md:text-base'>Banh Mi Bros © 2025</p>
-                <a className='md:hidden' href="https://zngr-dynamics.ch">Site by <span className="font-medium text-white-500">ZNGR</span></a>
+                <p className='pt-[0.125rem] text-sm md:text-base'>Banh Mi Bros © 2025</p>
+                <a className='md:hidden hover:[text-shadow:_0_1px_2px_#FFF8EE] transition-all duration-300 hover:text-white-500' href="https://zngr-dynamics.ch">Site by <span className='font-medium text-white-500'>ZNGR</span></a>
             </div>
             <div>
                 <h1 className='pt-8 text-6xl md:text-9xl xl:text-10xl circula-bold sm:circula-extrabold xl:circula-black text-black-900'>
