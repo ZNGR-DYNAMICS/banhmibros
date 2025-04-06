@@ -89,7 +89,7 @@ const App: React.FC = () => {
                     </header>
                     <main className='relative bg-white-500 flex flex-col pointer-events-auto' id='test'>
                         <Headline>
-                            <AnimatedText scrollRef={scrollRef}
+                            <AnimatedText
                                 data-en="Authentic Vietnamese Streetfood has come to St.Gallen. Pick up your Banh Mi in store or order right to your doorstep."
                                 data-de="Banh Mis gibts nun auch in St.Gallen. Hol's dir im Store, oder lass es direkt nach Hause liefern."
                             />
@@ -97,7 +97,7 @@ const App: React.FC = () => {
                             <h2 data-en="Pick up your Banh Mi in store or order right to your doorstep." data-de="Hol's dir im Store, oder lass es direkt nach Hause liefern." />*/}
                         </Headline>
                         <section>
-                            <Menu scrollRef={scrollRef} />
+                            <Menu />
                         </section>{/*}
                         <div className='px-4 md:px-8 lg:px-16 font-poppins font-semibold text-5xl md:text-6xl lg:text-7xl text-black-500'>
                             <h2>
@@ -112,7 +112,7 @@ const App: React.FC = () => {
                         </div>
                         <DatabaseViewer />{*/}
                         <div>
-                            <Reviews scrollRef={scrollRef}/>
+                            <Reviews/>
                         </div>
                         <div className="absolute bottom-0 left-0 h-0.5 w-full bg-gray-500"></div> {/*Line*/}
                     </main>

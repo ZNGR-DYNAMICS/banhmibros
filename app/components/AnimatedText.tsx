@@ -1,9 +1,10 @@
 import React from "react";
 import { motion, useScroll, useTransform, MotionValue, useSpring } from "framer-motion";
+import { useLayoutScroll } from "../hooks/useLayoutScroll";
 
 export type AnimatedTextProps = {
     children?: React.ReactNode;
-    scrollRef: React.RefObject<HTMLElement>;
+    //scrollRef: React.RefObject<HTMLElement>;
     transitionColor?: string;
     "data-en"?: string;
     "data-de"?: string;
@@ -39,12 +40,13 @@ const AnimatedCharacter: React.FC<AnimatedCharacterProps> = ({ char, index, prog
     );
 };
 
-const AnimatedText: React.FC<AnimatedTextProps> = ({ children, scrollRef, transitionColor }) => {
+const AnimatedText: React.FC<AnimatedTextProps> = ({ children, transitionColor }) => {
+    const scrollRef = useLayoutScroll();
     const containerRef = React.useRef<HTMLDivElement>(null);
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        container: scrollRef,
+        container: scrollRef || undefined,
         offset: ["0 1", "0 0.25"],
         layoutEffect: false,
     });
