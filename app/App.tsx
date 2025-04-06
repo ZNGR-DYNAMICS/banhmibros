@@ -11,7 +11,7 @@ import Reviews from './components/Reviews/Reviews';
 import Footer from './components/Footer';
 import NavLink from './components/NavLink';
 
-function App() {
+const App: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [navHover, setNavHover] = useState(false);
     const scrollRef = useRef<HTMLDivElement>(null);
