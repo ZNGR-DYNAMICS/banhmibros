@@ -1,9 +1,8 @@
-import React, { useState, useRef, ReactNode, isValidElement, Children } from 'react';
+import React, { useState, useRef, ReactNode } from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import { useSwipeable } from 'react-swipeable';
-import Menu from './Menu/Menu';
-import OrderPage from '../pages/OrderPage';
+import { LayoutScrollProvider } from '../contexts/LayoutScrollContext';
 
 interface LayoutProps {
     children: ReactNode;
@@ -60,18 +59,12 @@ const Layout: React.FC<LayoutProps> = ({ children, navColor = defaultNavColor })
                             </svg>
                         </button>
                     </nav>
-                    <div className='pointer-events-auto'>
-                        {Children.map(children, child => {
-                            if (isValidElement(child) && child.type === Menu) {
-                                return React.cloneElement(child, { scrollRef: scrollRef });
-                            }
-                            if (isValidElement(child) && child.type === OrderPage) {
-                                return React.cloneElement(child, { scrollRef: scrollRef });
-                            }
-                            return child;
-                        })}
-                        <div className="absolute bottom-0 left-0 h-0.5 w-full bg-gray-500"></div> {/* Line */}
-                    </div>
+                    <LayoutScrollProvider value={scrollRef}>
+                        <div className='pointer-events-auto'>
+                            {children}
+                            <div className="absolute bottom-0 left-0 h-0.5 w-full bg-gray-500"></div> {/* Line */}
+                        </div>
+                    </LayoutScrollProvider>
                 </div>
                 <footer className='sticky bottom-0 left-0 w-full -z-10 pointer-events-auto'>
                     <Footer />
