@@ -8,6 +8,7 @@ import App from './App.tsx';
 import Menu from './components/Menu/Menu.tsx';
 import Legal from './components/Legal/Legal.tsx';
 import Layout from './components/Layout.tsx';
+import OrderPage from './pages/OrderPage.tsx';
 
 const passwordPrompt = (): void => {
     const validPassword = "test";
@@ -36,6 +37,7 @@ createRoot(document.getElementById('root')!).render(
                 <Route path="/" element={<App />} />
                 <Route path="/menu" element={<Layout><Menu /></Layout>} />
                 <Route path="/legal" element={<Layout navColor='text-black-500'><Legal /></Layout>} />
+                <Route path="/order" element={<Layout navColor='text-black-500'><OrderPage /></Layout>} />
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </BrowserRouter>
