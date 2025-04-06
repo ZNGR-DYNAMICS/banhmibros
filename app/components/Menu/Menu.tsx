@@ -1,12 +1,13 @@
 import { useScroll, useTransform } from "framer-motion";
 import MenuSection from "./MenuSection";
+import { useLayoutScroll } from "../../hooks/useLayoutScroll";
 
-type MenuProps = {
-    scrollRef?: React.RefObject<HTMLDivElement>;
-};
-
-const Menu: React.FC<MenuProps> = ({ scrollRef }) => {
-    if (!scrollRef) return null;
+const Menu: React.FC = () => {
+    const scrollRef = useLayoutScroll();
+    if (!scrollRef) {
+        console.warn("Menu component: scrollRef not found in LayoutScrollContext. Is it rendered within Layout?");
+        return null;
+    }
     const { scrollYProgress } = useScroll({ container: scrollRef, layoutEffect: false });
 
     const section1Y = useTransform(scrollYProgress, [0, 0.1], ["0vh", "0vh"]);
