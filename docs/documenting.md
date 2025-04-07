@@ -36,3 +36,5 @@ Cons:
 - Increased friction by switching between Notion and the IDE. 
 - External access limitations due to developers requiring an email invitation to the workspace. Adding them as a full member is also only a paid feature. 
 - Collaboration challenges while the code-base is naturally handled through pull-requests, Notion does not support this type of collaboration and viewing exact changes. 
+
+## Markdown All in One Extension
