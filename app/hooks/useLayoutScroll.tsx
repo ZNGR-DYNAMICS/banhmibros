@@ -4,8 +4,9 @@ import { LayoutScrollContext, LayoutScrollContextType } from '../contexts/Layout
 export const useLayoutScroll = (): LayoutScrollContextType => {
     const context = useContext(LayoutScrollContext);
 
-    if (context === undefined) { // Check might need to be === null depending on default/usage
+    if (!context) {
         console.warn("useLayoutScroll must be used within a LayoutScrollProvider component.");
     }
+
     return context;
 }
