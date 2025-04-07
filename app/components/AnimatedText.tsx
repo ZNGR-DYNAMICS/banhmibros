@@ -4,7 +4,6 @@ import { useLayoutScroll } from "../hooks/useLayoutScroll";
 
 export type AnimatedTextProps = {
     children?: React.ReactNode;
-    //scrollRef: React.RefObject<HTMLElement>;
     transitionColor?: string;
     "data-en"?: string;
     "data-de"?: string;
@@ -46,7 +45,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ children, transitionColor }
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        container: scrollRef || undefined,
+        container: scrollRef,
         offset: ["0 1", "0 0.25"],
         layoutEffect: false,
     });
