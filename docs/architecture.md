@@ -1,17 +1,18 @@
-This section describes the overall structure of the project. It includes details about the PHP server for backend logic, the MySQL database for data storage, and the Vite-powered React frontend for the user interface. The API layer connecting these components is also outlined to give a clear understanding of how the project is structured. 
 
-# 1.0 Architecture
-The Banh Mi Bros web-experience is built on Vite, React, Typescript and TailwindCSS, using a PHP server for the backend and MySQL as database storage. 
+# 1 Architecture
+This section describes the overall structure of the project. It includes details about the PHP server for backend logic, the MySQL database for data storage, and the Vite-powered React frontend for the user interface. The API layer connecting these components is also outlined to give a clear understanding of how the project is structured.  
 The web-experience is hosted on HostTech, more detailed information can be found in [DevOps](devops.md).
 
+- [1 Architecture](#1-architecture)
+  - [1.1 Components](#11-components)
+  - [1.2 File Line Endings (LF / CRLF)](#12-file-line-endings-lf--crlf)
 
-## Components
-Re-usable components for the user-interface. The styling of components should not have any spacing, to be able to set the spacing according to the page's needs. 
+
+## 1.1 Components
+Re-usable front-end components for the user-interface. The styling of components should not have any spacing, to be able to set the spacing according to the page's needs. 
 Components should be responsive by default.
 
-
-## File Line Endings (LF / CRLF)
-
+## 1.2 File Line Endings (LF / CRLF)
 > The warning "This diff contains a change in line endings from 'LF' to 'CRLF'" is **completely unrelated** to your change in whitespace indentation from 2 to 4 spaces in your ESLint configuration.
 > 
 > 

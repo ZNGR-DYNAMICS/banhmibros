@@ -1,7 +1,20 @@
 # DevOps
 This document outlines the DevOps process for the Banh Mi Bros project, detailing the integration with development and operations across the entire software lifecycle enabling continuous delivery. 
 
-## DevOps Phases
+- [DevOps](#devops)
+  - [1.1 DevOps Phases](#11-devops-phases)
+    - [1. Plan](#1-plan)
+    - [2. Code](#2-code)
+    - [3. Build](#3-build)
+    - [4. Test](#4-test)
+    - [5. Release](#5-release)
+    - [6. Deploy](#6-deploy)
+    - [7. Operate](#7-operate)
+    - [8. Monitor](#8-monitor)
+
+<br>
+
+## 1.1 DevOps Phases
 The DevOps phases and how they are handled in the project. 
 
 ### 1. Plan

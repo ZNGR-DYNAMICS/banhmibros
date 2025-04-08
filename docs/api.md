@@ -1,4 +1,8 @@
+# 1 API
 This document provides a comprehensive overview of the available API endpoints, their functionalities, request parameters, and expected responses. Understanding this reference will enable you to effectively interact with the backend of our application and integrate its features into other systems or applications.
+
+- [1 API](#1-api)
+
 
 > [!NOTE]
 > At the time of writing, no specific API endpoints have been fully implemented. This document serves as a foundational outline and will be updated with detailed information and examples as the API development progresses.
