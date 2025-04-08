@@ -8,7 +8,7 @@ const OrderButtons: React.FC = () => {
             <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-8 lg:gap-16">
                 <a href="https://www.just-eat.ch/en/menu/banh-mi-bros" target="_blank">
                     <ButtonTopRight>
-                        <div className="flex gap-6">
+                        <div className="flex gap-4 lg:gap-6">
                             <img src={icon_justeat} alt="Order Just Eat" />
                             Just Eat
                         </div>
@@ -16,7 +16,7 @@ const OrderButtons: React.FC = () => {
                 </a>
                 <a href="https://www.ubereats.com/ch/store/banh-mi-bros/hE1gOaEwTQqXArbe8VL7lg" target="_blank">
                     <ButtonTopRight>
-                        <div className="flex gap-6">
+                        <div className="flex gap-4 lg:gap-6">
                             <img src={icon_ubereats} alt="Order Uber Eats" />
                             Uber Eats
                         </div>
@@ -26,7 +26,7 @@ const OrderButtons: React.FC = () => {
             <div className="flex flex-col md:flex-row justify-center">
                 <a href="https://www.just-eat.ch/en/menu/banh-mi-bros?shipping=pickup" target="_blank">
                     <ButtonTopRight>
-                        <div className="flex gap-6">
+                        <div className="flex gap-4 lg:gap-6">
                             <img src={icon_justeat} alt="Takeaway Just Eat" />
                             Takeaway
                         </div>
