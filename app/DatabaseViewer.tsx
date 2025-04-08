@@ -1,13 +1,24 @@
 import { useEffect, useState } from 'react';
+import apiConfig from '../api/api-config.json';
 
 const DatabaseViewer = () => {
     const [databases, setDatabases] = useState<any[]>([]);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        const apiBaseUrl = import.meta.env.VITE_API_URL;
+        const hostname = window.location.hostname;
+        let apiUrl = apiConfig.devApiUrl;
 
-        fetch(`${apiBaseUrl}/getDatabases.php`)
+        const PREV_DOMAIN = 'vite.zngr-dynamics.ch';
+        const PROD_DOMAIN = 'prod-domain.ch';
+
+        if (hostname.includes(PREV_DOMAIN)) {
+            apiUrl = apiConfig.previewApiUrl;
+        } else if (hostname.includes(PROD_DOMAIN)) {
+            apiUrl = apiConfig.productionApiUrl;
+        }
+
+        fetch(`${apiUrl}/getDatabases.php`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
