@@ -11,3 +11,4 @@
 - [php](https://www.php.net/)
 - [MySQL](https://www.mysql.com/)
 - [ZNGR DYNAMICS](https://zngr-dynamics.ch/)
+
