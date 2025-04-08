@@ -29,7 +29,7 @@
 - [ ] **Documentation** (changes to the documentation are required) -> Create new Task
 - [ ] **Responsiveness** (changes to responsiveness are required) -> Create new Task
 - [ ] **Deployment** (requires immediate deployment to `preview` or `production`)
-    - [ ] **Production Deployment** (requires immediate deployment to production) -> Deploy to Preview and Production, update to status `released`
-    - [ ] **Preview Deployment** (requires immediate deployment to production) -> Deploy to Preview and Production, update to status `released`
+    - [ ] **Production Deployment** (requires immediate deployment to `production`) -> Deploy to Preview and Production, update to status `released`
+    - [ ] **Preview Deployment** (requires immediate deployment to `preview`) -> Deploy to Preview and Production, update to status `released`
 
 ## Future Work / Notes (Optional)
