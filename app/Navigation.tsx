@@ -3,8 +3,8 @@ import { useSwipeable } from 'react-swipeable';
 import BanhMiLogo from './BanhMiBros-Logo.svg';
 
 interface NavigationProps {
-  isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
+    isOpen: boolean;
+    setIsOpen: (open: boolean) => void;
 }
 
 const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {

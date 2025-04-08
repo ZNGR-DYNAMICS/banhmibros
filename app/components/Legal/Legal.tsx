@@ -9,7 +9,7 @@ const Legal: React.FC = () => {
     
     return (
         <div className='relative pointer-events-none'>
-            <main className='relative flex flex-col bg-white-500 p-4 pt-16 md:p-8 lg:p-16 gap-8 text-black-500 pointer-events-auto'>
+            <div className='relative flex flex-col bg-white-500 p-4 pt-16 md:p-8 lg:p-16 gap-8 text-black-500 pointer-events-auto'>
                 <header className='flex flex-col gap-4'>
                     <h1 className="text-9xl circula-black break-normal" data-en="Legal" data-de="Rechtliches" />
                     <p data-en={`Last Updated: ${dateEn}`} data-de={`Zuletzt aktualisiert: ${dateDe}`} />
@@ -51,7 +51,7 @@ const Legal: React.FC = () => {
                     />
                 </div>
                 <div className="absolute bottom-0 left-0 h-0.5 w-full bg-gray-500"></div> {/*Line*/}
-            </main>
+            </div>
         </div>
     )
 }

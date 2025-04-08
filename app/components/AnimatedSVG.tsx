@@ -1,9 +1,9 @@
 import React from "react";
 import { motion, useScroll, useTransform, MotionValue, useSpring } from "framer-motion";
+import { useLayoutScroll } from "../hooks/useLayoutScroll";
 
 export type AnimatedSVGProps = {
     children?: React.ReactNode;
-    scrollRef: React.RefObject<HTMLElement>;
     transitionColor?: string;
 };
 
@@ -14,12 +14,7 @@ type AnimatedSVGChildProps = {
     transitionColor?: string;
 };
 
-const AnimatedSVGChild: React.FC<AnimatedSVGChildProps> = ({
-    svgElement,
-    index,
-    progress,
-    transitionColor = "#F19100",
-}) => {
+const AnimatedSVGChild: React.FC<AnimatedSVGChildProps> = ({ svgElement, index, progress, transitionColor = "#F19100" }) => {
     // Smooth the scroll progress value
     const smoothedProgress = useSpring(progress, { stiffness: 200, damping: 50 });
     // Animate the color from a base color to the transitionColor over a small range around the index
@@ -45,11 +40,8 @@ const AnimatedSVGChild: React.FC<AnimatedSVGChildProps> = ({
     );
 };
 
-const AnimatedSVG: React.FC<AnimatedSVGProps> = ({
-    children,
-    scrollRef,
-    transitionColor,
-}) => {
+const AnimatedSVG: React.FC<AnimatedSVGProps> = ({ children, transitionColor }) => {
+    const scrollRef = useLayoutScroll();
     const containerRef = React.useRef<HTMLDivElement>(null);
 
     const { scrollYProgress } = useScroll({

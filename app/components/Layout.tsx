@@ -1,8 +1,8 @@
-import React, { useState, useRef, ReactNode, isValidElement, Children } from 'react';
+import React, { useState, useRef, ReactNode } from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import { useSwipeable } from 'react-swipeable';
-import Menu from './Menu/Menu';
+import { LayoutScrollProvider } from '../contexts/LayoutScrollContext';
 
 interface LayoutProps {
     children: ReactNode;
@@ -36,7 +36,7 @@ const Layout: React.FC<LayoutProps> = ({ children, navColor = defaultNavColor })
                 <div className='relative pointer-events-none'>
                     <nav className={`absolute z-10 top-0 left-0 flex gap-8 p-4 sm:p-8 ${navColor} transition-colors pointer-events-auto`}>
                         <button
-                            className="block mt-4 sm:mt-0 transition duration-200 hover:text-bmb-orange"
+                            className="mt-4 sm:mt-0 transition duration-200 hover:text-bmb-orange"
                             onClick={() => setIsOpen((prev) => !prev)}
                             onMouseEnter={() => setNavHover(true)}
                             onMouseLeave={() => setNavHover(false)}
@@ -59,15 +59,12 @@ const Layout: React.FC<LayoutProps> = ({ children, navColor = defaultNavColor })
                             </svg>
                         </button>
                     </nav>
-                    <div className='pointer-events-auto'>
-                        {Children.map(children, child => {
-                            if (isValidElement(child) && child.type === Menu) {
-                                return React.cloneElement(child, { scrollRef: scrollRef });
-                            }
-                            return child;
-                        })}
-                        <div className="absolute bottom-0 left-0 h-0.5 w-full bg-gray-500"></div> {/* Line */}
-                    </div>
+                    <LayoutScrollProvider value={scrollRef}>
+                        <div className='pointer-events-auto'>
+                            {children}
+                            <div className="absolute bottom-0 left-0 h-0.5 w-full bg-gray-500"></div> {/* Line */}
+                        </div>
+                    </LayoutScrollProvider>
                 </div>
                 <footer className='sticky bottom-0 left-0 w-full -z-10 pointer-events-auto'>
                     <Footer />
