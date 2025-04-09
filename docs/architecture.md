@@ -4,13 +4,82 @@ This section describes the overall structure of the project. It includes details
 The web-experience is hosted on HostTech, more detailed information can be found in [DevOps](devops.md).
 
 - [1 Architecture](#1-architecture)
-  - [1.1 Components](#11-components)
+  - [1.1 URL and Routes](#11-url-and-routes)
+  - [1.2 Components](#12-components)
+- [2 Entry Point Architecture](#2-entry-point-architecture)
+  - [2.1 `index.html`](#21-indexhtml)
+  - [2.2 `main.tsx`](#22-maintsx)
+    - [2.2.1 Imports](#221-imports)
+    - [2.2.2 Password Protection](#222-password-protection)
+    - [2.2.3 Root Rendering](#223-root-rendering)
   - [1.2 File Line Endings (LF / CRLF)](#12-file-line-endings-lf--crlf)
 
 
-## 1.1 Components
+## 1.1 URL and Routes
+To render the different pages should be straightforward, including the following principles. 
+- route and names of the pages should be in English
+- route names should be short (less than 12 characters if reasonable<sup>1</sup>) and direct, e.g. `domain.com/legal` for both privacy-policy and imprint.
+  - **1** Page titles who are naturally long and fitting for the page, may be longer. A shorter fitting name is encouraged.
+
+Route names are determined inside [`main.tsx`](#22-maintsx) from the React, Vite side. The server side requires a different approach. 
+
+## 1.2 Components
 Re-usable front-end components for the user-interface. The styling of components should not have any spacing, to be able to set the spacing according to the page's needs. 
 Components should be responsive by default.
+
+<br>
+
+# 2 Entry Point Architecture
+The application's structure begins with the standard web entry point and then transitions into the React application powered by Vite.
+
+## 2.1 `index.html`
+`/`
+
+Serves as the single entry point to the web-experience. It's the initial HTML-file the browser loads. 
+- Contains the `<head>` tag, with title and other browser information.
+- The `<body>` renders the root through it's id, set in [`main.tsx`](#22-maintsx)
+- Contains a script tag, rendering main.tsx
+
+## 2.2 `main.tsx`
+[`/app`](../app/)
+
+This TypeScript file is the primary entry point for the React application. It's the first piece of the application-specific code to be executed after the browser loads [`index.html`](#21-indexhtml)
+
+### 2.2.1 Imports
+Styling, fonts, and components used in `main.tsx` are imported here, like pages which are required to render. 
+Also is the layout context imported here, used to wrap pages the the `LayoutScroll`. Imports required by React to render the page correctly, can also be found here, like `Routes`, `Route`, `BrowserRouter`, and `Navigate` from `'react-router-dom'`.
+
+### 2.2.2 Password Protection
+For environments `dev` and `prev`, the page is locked through password-protection. Production is not affected by this.
+- A simple alert is displayed, requiring the user to set the correct password stored in the `env`-files. 
+- On successfully logging in, the page renders and the succeeded state is stored in `sessionStorage`.
+  - This does not require the user to enter the password again, on re-routing.
+  - As soon as the user closes the tab, the session is revoked, and a password is required again on visit. 
+
+### 2.2.3 Root Rendering
+`createRoot(document.getElementById('root')!).render(...)` takes over the DOM and renders the root of the project. Routes are set directly in the code, allowing to render the respective pages, by additionally wrapping them in the layout component. 
+
+```ts
+<StrictMode>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/menu" element={<Layout navColor='text-black-500'><MenuPage /></Layout>} />
+            <Route path="/legal" element={<Layout navColor='text-black-500'><Legal /></Layout>} />
+            <Route path="/order" element={<Layout navColor='text-black-500'><OrderPage /></Layout>} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+    </BrowserRouter>
+</StrictMode>,
+```
+
+- `<StrictMode>` highlights potential problems in teh application during development. It activates additional checks and warnings for descendants.
+- `<BrowserRouter>` enables client-side routing through using the browser's history API. It wraps the entire application's routing configuration.
+- `<Routes>` acts as a container for individual route definitions. It renders the first `Route` matching the current URL.
+- `<Route path="..." element={<Component />} />`
+
+
+<br>
 
 ## 1.2 File Line Endings (LF / CRLF)
 > The warning "This diff contains a change in line endings from 'LF' to 'CRLF'" is **completely unrelated** to your change in whitespace indentation from 2 to 4 spaces in your ESLint configuration.
