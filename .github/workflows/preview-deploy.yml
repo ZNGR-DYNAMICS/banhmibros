@@ -32,7 +32,21 @@ jobs:
         CI: false
       run: npm run build
     
-    # 6 Copy api files and dist folder to preview
+    # 6 Create .htaccess for SPA routing
+    - name: Create .htaccess
+      run: |
+        echo '<IfModule mod_rewrite.c>' > dist/.htaccess
+        echo '  RewriteEngine On' >> dist/.htaccess
+        echo '  RewriteBase /' >> dist/.htaccess
+        echo '  RewriteCond %{REQUEST_FILENAME} -f [OR]' >> dist/.htaccess
+        echo '  RewriteCond %{REQUEST_FILENAME} -d' >> dist/.htaccess
+        echo '  RewriteRule ^ - [L]' >> dist/.htaccess
+        echo '  RewriteRule ^ index.html [L]' >> dist/.htaccess
+        echo '</IfModule>' >> dist/.htaccess
+        echo 'Created dist/.htaccess'
+        cat dist/.htaccess # Temporary Logging
+    
+    # 7 Copy api files and dist folder to preview
     - name: Deploy to preview branch
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
