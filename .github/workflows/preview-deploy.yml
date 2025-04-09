@@ -33,18 +33,18 @@ jobs:
       run: npm run build
     
     # 6 Create .htaccess for SPA routing
-    - name: Create .htaccess
+    - name: Create .htaccess in build output (_dist)
       run: |
-        echo '<IfModule mod_rewrite.c>' > dist/.htaccess
-        echo '  RewriteEngine On' >> dist/.htaccess
-        echo '  RewriteBase /' >> dist/.htaccess
-        echo '  RewriteCond %{REQUEST_FILENAME} -f [OR]' >> dist/.htaccess
-        echo '  RewriteCond %{REQUEST_FILENAME} -d' >> dist/.htaccess
-        echo '  RewriteRule ^ - [L]' >> dist/.htaccess
-        echo '  RewriteRule ^ index.html [L]' >> dist/.htaccess
-        echo '</IfModule>' >> dist/.htaccess
-        echo 'Created dist/.htaccess'
-        cat dist/.htaccess # Temporary Logging
+        echo '<IfModule mod_rewrite.c>' > _dist/.htaccess
+        echo '  RewriteEngine On' >> _dist/.htaccess
+        echo '  RewriteBase /' >> _dist/.htaccess
+        echo '  RewriteCond %{REQUEST_FILENAME} -f [OR]' >> _dist/.htaccess
+        echo '  RewriteCond %{REQUEST_FILENAME} -d' >> _dist/.htaccess
+        echo '  RewriteRule ^ - [L]' >> _dist/.htaccess
+        echo '  RewriteRule ^ index.html [L]' >> _dist/.htaccess
+        echo '</IfModule>' >> _dist/.htaccess
+        echo 'Created _dist/.htaccess'
+        cat _dist/.htaccess #temporary log
     
     # 7 Copy api files and dist folder to preview
     - name: Deploy to preview branch
