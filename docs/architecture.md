@@ -5,7 +5,8 @@ The web-experience is hosted on HostTech, more detailed information can be found
 
 - [1 Architecture](#1-architecture)
   - [1.1 URL and Routes](#11-url-and-routes)
-  - [1.2 Components](#12-components)
+  - [1.2 Pages](#12-pages)
+  - [1.3 Components](#13-components)
 - [2 Entry Point Architecture](#2-entry-point-architecture)
   - [2.1 `index.html`](#21-indexhtml)
   - [2.2 `main.tsx`](#22-maintsx)
@@ -23,9 +24,16 @@ To render the different pages should be straightforward, including the following
 
 Route names are determined inside [`main.tsx`](#22-maintsx) from the React, Vite side. The server side requires a different approach. 
 
-## 1.2 Components
-Re-usable front-end components for the user-interface. The styling of components should not have any spacing, to be able to set the spacing according to the page's needs. 
-Components should be responsive by default.
+## 1.2 Pages
+Pages, found in the `/pages` directory, hold the various pages defined by the url `banh-mi-bros.ch/{page-name}` should be composed of the following.
+- Individual pages should not be fully hard-coded, meaning they should be built from multiple individual components. 
+- Pages should be wrapped in the `layout`, providing the `navigation` and `footer`.
+- Pages should style individual components, e.g. spacing, to fit the page's needs.  
+
+## 1.3 Components
+Components are frontend components which can be re-used in multiple pages. 
+- Components should avoid spacing where logical. 
+- Components should be built after the mobile first principle and always responsive for mobile, tablet, and desktop.
 
 <br>
 
