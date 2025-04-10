@@ -65,12 +65,11 @@ const App: React.FC = () => {
                             </div>
                             <nav className='flex flex-col xl:gap-4 text-8xl xl:text-9xl font-circula circula-bold sm:circula-extrabold xl:circula-black'>
                                 <NavLink href="/menu">Menu</NavLink>
-                                <NavLink href="/banhmi">Banh Mi</NavLink>
                                 <NavLink href="/order">Order</NavLink>
-                                <NavLink href="/socials">Socials</NavLink>
+                                <NavLink href="/contact">Contact</NavLink>
                             </nav>
                             <div className='flex flex-wrap items-center hover:text-bmb-orange transition-colors duration-300 my-0 sm:my-4 xl:my-8'>
-                                <a className="inline-flex items-center gap-4 sm:gap-8" href="#test">
+                                <a className="inline-flex items-center gap-4 sm:gap-8" href="#menu">
                                     <h2 className="flex flex-wrap flex-1 font-extrabold text-3xl sm:text-4xl xl:text-5xl">
                                         AUTHENTIC VIETNAMESE STREETFOOD
                                     </h2>
