@@ -17,7 +17,6 @@ export default function Footer(){
                     <Link href="/menu">Menu</Link>
                     <Link href="/order" data-en='Order' data-de='Bestellen'>Order</Link>
                     <Link href="/process">Process</Link>
-                    <Link href="/location" data-en='Location' data-de='Standort'>Location</Link>
                     <Link href="/contact" data-en='Contact' data-de='Kontakt'>Contact</Link>
                 </div>
                 <div className="flex flex-col gap-1 items-end md:items-start">
