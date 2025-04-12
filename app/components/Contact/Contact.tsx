@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Headline from "../Headline";
 import AnimatedText from "../AnimatedText";
 import ButtonTopRight from "../ButtonTopRight";
@@ -5,15 +6,35 @@ import Link from "../Link";
 import { useTranslation } from "../../utils/translation";
 
 const Contact: React.FC = () => {
+    const [showMap, setShowMap] = useState(false);
+
     useTranslation();
     return (
         <div className="flex flex-col">
             <header className="flex flex-col md:flex-row justify-between gap-4 md:gap-8 lg:gap-16 px-4 pt-16 md:px-8 md:pt-16 lg:px-16">
-                <iframe
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=9.3750,47.4265,9.3755,47.4270&layer=mapnik&marker=47.426828,9.375273"
-                    width="100%"
-                    height="400px"
-                />
+                { showMap ? (
+                    <iframe
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=9.3750,47.4265,9.3755,47.4270&layer=mapnik&marker=47.426828,9.375273"
+                        width="100%"
+                        height="600px"
+                        allowFullScreen
+                    />
+                ) : (
+                    <div className="relative h-[600px] w-full">
+                        <img
+                            src="/Image-Map.png"
+                            alt="Map preview"
+                            className="w-full h-full object-cover"
+                        />
+                        <button className="absolute bottom-0 w-full flex gap-8 px-4 py-2 bg-white-500 border-y border-black-500 hover:bg-bmb-orange transition-colors duration-300"
+                            onClick={() => setShowMap(true)}
+                        >
+                            <p>Open Interactive Map</p>
+                            <p>By clicking this button, you agree to OpenStreetMap's cookie usage.</p>
+                        </button>
+                    </div>
+                )}
+
                 <div className="flex flex-col justify-between gap-4">
                     <div className="flex flex-col gap-1 md:items-end">
                         <h2 className="font-circula circula-bold text-3xl pb-2">Banh Mi Bros</h2>
