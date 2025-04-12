@@ -88,15 +88,17 @@ const App: React.FC = () => {
                                 </a>
                             </div>
                         </header>
-                        <main className='relative bg-white-500 flex flex-col pointer-events-auto' id='test'>
-                            <Headline>
-                                <AnimatedText
-                                    data-en="Authentic Vietnamese Streetfood has come to St.Gallen. Pick up your Banh Mi in store or order right to your doorstep."
-                                    data-de="Banh Mis gibts nun auch in St.Gallen. Hol's dir im Store, oder lass es direkt nach Hause liefern."
-                                />
-                                {/*<h2 data-en="Authentic Vietnamese Streetfood has come to St.Gallen." data-de="Banh Mis gibts nun auch in St.Gallen." />
-                                <h2 data-en="Pick up your Banh Mi in store or order right to your doorstep." data-de="Hol's dir im Store, oder lass es direkt nach Hause liefern." />*/}
-                            </Headline>
+                        <main className='relative bg-white-500 flex flex-col pointer-events-auto' id='menu'>
+                            <div className='px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32'>
+                                <Headline>
+                                    <AnimatedText
+                                        data-en="Authentic Vietnamese Streetfood has come to St.Gallen. Pick up your Banh Mi in store or order right to your doorstep."
+                                        data-de="Banh Mis gibts nun auch in St.Gallen. Hol's dir im Store, oder lass es direkt nach Hause liefern."
+                                    />
+                                    {/*<h2 data-en="Authentic Vietnamese Streetfood has come to St.Gallen." data-de="Banh Mis gibts nun auch in St.Gallen." />
+                                    <h2 data-en="Pick up your Banh Mi in store or order right to your doorstep." data-de="Hol's dir im Store, oder lass es direkt nach Hause liefern." />*/}
+                                </Headline>
+                            </div>
                             <section>
                                 <Menu />
                             </section>{/*}
