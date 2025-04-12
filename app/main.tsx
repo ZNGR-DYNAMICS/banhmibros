@@ -9,6 +9,7 @@ import Legal from './components/Legal/Legal.tsx';
 import Layout from './components/Layout.tsx';
 import OrderPage from './pages/OrderPage.tsx';
 import MenuPage from './pages/MenuPage.tsx';
+import ContactPage from './pages/ContactPage.tsx';
 
 const passwordPrompt = (): void => {
     const validPassword = import.meta.env.VITE_PAGE_LOCK_PASS;
@@ -45,6 +46,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="/menu" element={<Layout navColor='text-black-500'><MenuPage /></Layout>} />
             <Route path="/legal" element={<Layout navColor='text-black-500'><Legal /></Layout>} />
             <Route path="/order" element={<Layout navColor='text-black-500'><OrderPage /></Layout>} />
+            <Route path="/contact" element={<Layout navColor='text-black-500'><ContactPage /></Layout>} />
             <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         </BrowserRouter>
