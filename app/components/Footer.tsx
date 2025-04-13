@@ -46,7 +46,7 @@ export default function Footer(){
                 </div>
                 <div className='flex justify-between pt-1'>
                     <p data-en="Sunday" data-de="Sonntag" />
-                    <p>Closed</p>
+                    <p data-en="Closed" data-de="Geschlossen" />
                 </div>
             </div>
             <div className='flex flex-col md:flex-row md:justify-between gap-8 md:gap-16 lg:gap-32'>

@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
                         </div>
                         <div className='w-full flex justify-between gap-4 pt-1'>
                             <p data-en="Sunday" data-de="Sonntag" />
-                            <p>Closed</p>
+                            <p data-en="Closed" data-de="Geschlossen" />
                         </div>
                     </div>
                 </div>
