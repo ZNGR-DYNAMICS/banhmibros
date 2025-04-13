@@ -3,7 +3,7 @@ import Headline from "../Headline";
 import AnimatedText from "../AnimatedText";
 import ButtonTopRight from "../ButtonTopRight";
 import Link from "../Link";
-import { useTranslation } from "../../utils/translation";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const Contact: React.FC = () => {
     const [showMap, setShowMap] = useState(false);

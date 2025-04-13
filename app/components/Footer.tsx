@@ -1,5 +1,5 @@
 import Link from './Link';
-import { useTranslation } from '../utils/translation';
+import { useTranslation } from '../hooks/useTranslation';
 
 export default function Footer(){
     useTranslation();

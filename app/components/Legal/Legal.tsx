@@ -1,4 +1,4 @@
-import { useTranslation } from '../../utils/translation';
+import { useTranslation } from '../../hooks/useTranslation';
 import Link from '../Link';
 
 const dateDe = '5. April 2025';

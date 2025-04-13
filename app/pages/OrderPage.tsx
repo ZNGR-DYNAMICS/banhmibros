@@ -1,6 +1,6 @@
 import Order from '../components/Order/Order';
 import Reviews from '../components/Reviews/Reviews';
-import { useTranslation } from '../utils/translation';
+import { useTranslation } from '../hooks/useTranslation';
 
 const OrderPage: React.FC = () => {
     useTranslation();
