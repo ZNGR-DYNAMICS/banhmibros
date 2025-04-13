@@ -9,6 +9,26 @@ interface HeadlineProps {
 type Language = 'en' | 'de';
 type DataAttribute = `data-${Language}`;
 
+/**
+ * A headline component that displays a multilingual headline with optional animation.
+ *
+ * @remarks
+ * Uses the `useTranslation` hook to dynamically render text based on the browser's language.
+ * Supports `AnimatedText` child components for animated text effects and standard HTML heading elements (like `h2`) for static translated text.
+ * The translations are provided as `data-en` and `data-de` props on the child elements.
+ *
+ * @example
+ * ```tsx
+ * <Headline>
+ * <AnimatedText data-en="Welcome" data-de="Willkommen" />
+ * <h2 data-en="Our Mission" data-de="Unsere Mission">Our Mission</h2>
+ * </Headline>
+ * ```
+ *
+ * @param children - React nodes to be rendered within the headline. These can be `AnimatedText` components or other HTML elements that support `data-en` and `data-de` attributes for translation.
+ *
+ * @returns A `div` element containing the translated child components.
+ */
 const Headline: React.FC<HeadlineProps> = ({ children }) => {
     const { language } = useTranslation();
 
