@@ -44,18 +44,19 @@ jobs:
         echo '  RewriteRule ^ index.html [L]' >> _dist/.htaccess
         echo '</IfModule>' >> _dist/.htaccess
         echo 'Created _dist/.htaccess'
-        cat _dist/.htaccess #temporary log
+        cat _dist/.htaccess # temporary log
     
-    # 7 Copy api files and dist folder to preview
+    # 7 Copy api files to _dist
+    - name: Copy API files to build output
+      run: cp -R api/* _dist/
+    
+
+    # 8 Copy api files and dist folder to preview
     - name: Deploy to preview branch
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        mkdir dist
-        cp -R api dist/
-        cp -R _dist/* dist/
-        
-        cd dist
+        cd _dist
         git init
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
@@ -63,4 +64,4 @@ jobs:
         git add .
         git commit -m "Deploy preview build from dev"
         git branch -M preview
-        git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ZNGR-DYNAMICS/banhmibros-vite.git preview
+        git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ZNGR-DYNAMICS/banhmibros.git preview
