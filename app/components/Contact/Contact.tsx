@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
                 ) : (
                     <div className="relative h-[600px] w-full">
                         <img
-                            src="/Image-Map.png"
+                            src="/business/Image-Map.png"
                             alt="Map preview"
                             className="w-full h-full object-cover"
                         />
