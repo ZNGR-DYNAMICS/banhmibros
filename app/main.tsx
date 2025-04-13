@@ -10,7 +10,7 @@ import Layout from './components/Layout.tsx';
 import OrderPage from './pages/OrderPage.tsx';
 import MenuPage from './pages/MenuPage.tsx';
 import ContactPage from './pages/ContactPage.tsx';
-
+/*
 const passwordPrompt = (): void => {
     const validPassword = import.meta.env.VITE_PAGE_LOCK_PASS;
     let userPassword = "";
@@ -36,7 +36,7 @@ const checkPageUnlocked = (): boolean => {
 
 if (import.meta.env.MODE !== 'prod' && !checkPageUnlocked()) {
     passwordPrompt();
-}
+}*/
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
