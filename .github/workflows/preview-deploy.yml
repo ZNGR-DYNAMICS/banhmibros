@@ -44,7 +44,6 @@ jobs:
         echo '  RewriteRule ^ index.html [L]' >> _dist/.htaccess
         echo '</IfModule>' >> _dist/.htaccess
         echo 'Created _dist/.htaccess'
-        cat _dist/.htaccess # temporary log
     
     # 7 Copy api files to _dist
     - name: Copy API files to build output
