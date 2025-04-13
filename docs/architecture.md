@@ -41,7 +41,9 @@ Frontend components which can be re-used in multiple pages, or sub-components.
 Components should adhere the following principles:  
 - Follow the mobile first principle and always be responsive for mobile, tablet, and desktop media-queries.
 - Should not contain style-spacing inside the component, like padding or margin, and instead a parent-div should set the content spacing.
-  - This ensures re-usability of the component, in positions that were not planned initially. 
+  - This ensures re-usability of the component, in positions that were not planned initially.
+
+Individual Components are documented in-depth under the [`/app/docs/components`](/components/Headline.md) directory. 
 
 ## 1.4 Hooks
 [`/app/hooks`](../app/hooks)
