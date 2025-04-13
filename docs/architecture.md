@@ -1,12 +1,14 @@
 
 # 1 Architecture
-This section describes the overall structure of the project. It includes details about the PHP server for backend logic, the MySQL database for data storage, and the Vite-powered React frontend for the user interface. The API layer connecting these components is also outlined to give a clear understanding of how the project is structured.  
+This section describes the overall structure of the project repository. It includes details about the PHP server for backend logic, the MySQL database for data storage, and the Vite-powered React frontend for the user interface. The API layer connecting these components is also outlined to give a clear understanding of how the project is structured.  
 The web-experience is hosted on HostTech, more detailed information can be found in [DevOps](devops.md).
 
 - [1 Architecture](#1-architecture)
   - [1.1 URL and Routes](#11-url-and-routes)
   - [1.2 Pages](#12-pages)
   - [1.3 Components](#13-components)
+  - [1.4 Hooks](#14-hooks)
+  - [1.5 Utils](#15-utils)
 - [2 Entry Point Architecture](#2-entry-point-architecture)
   - [2.1 `index.html`](#21-indexhtml)
   - [2.2 `main.tsx`](#22-maintsx)
@@ -18,22 +20,42 @@ The web-experience is hosted on HostTech, more detailed information can be found
 
 ## 1.1 URL and Routes
 To render the different pages should be straightforward, including the following principles. 
-- route and names of the pages should be in English
-- route names should be short (less than 12 characters if reasonable<sup>1</sup>) and direct, e.g. `domain.com/legal` for both privacy-policy and imprint.
-  - **1** Page titles who are naturally long and fitting for the page, may be longer. A shorter fitting name is encouraged.
+- Routes and names of the pages should be English.
+- Route names should be short (less than 12 characters if reasonable<sup>1</sup>) and direct, e.g. `domain.com/legal` for both privacy-policy and imprint.
+  - **1** Page titles who are naturally long and fitting for the page may be longer, though a shorter fitting name is encouraged.
 
 Route names are determined inside [`main.tsx`](#22-maintsx) from the React, Vite side. The server side requires a different approach. 
 
 ## 1.2 Pages
-Pages, found in the `/pages` directory, hold the various pages defined by the url `banh-mi-bros.ch/{page-name}` should be composed of the following.
+[`/app/pages`](../app/pages/)
+
+Hold the various pages defined by the url `domain.com/{page-name}` and should be composed of the following.
 - Individual pages should not be fully hard-coded, meaning they should be built from multiple individual components. 
 - Pages should be wrapped in the `layout`, providing the `navigation` and `footer`.
 - Pages should style individual components, e.g. spacing, to fit the page's needs.  
 
 ## 1.3 Components
-Components are frontend components which can be re-used in multiple pages. 
-- Components should avoid spacing where logical. 
-- Components should be built after the mobile first principle and always responsive for mobile, tablet, and desktop.
+[`/app/components`](../app/components)
+
+Frontend components which can be re-used in multiple pages, or sub-components. 
+Components should adhere the following principles:  
+- Follow the mobile first principle and always be responsive for mobile, tablet, and desktop media-queries.
+- Should not contain style-spacing inside the component, like padding or margin, and instead a parent-div should set the content spacing.
+  - This ensures re-usability of the component, in positions that were not planned initially. 
+
+## 1.4 Hooks
+[`/app/hooks`](../app/hooks)
+
+Hooks are reusable stateful logic which can call React features like context, `useState`, or `useEffect`.
+
+- Can't be utilized inside loops, conditions, nested functions, or `try` / `catch` / `finally` blocks.
+- Must follow the React [Rules of Hooks](https://react.dev/reference/rules/rules-of-hooks)
+
+## 1.5 Utils
+[`/app/utils`](../app/utils)
+
+Utils are plain javascript/typescript functions that perform operations without any React dependencies, like formatting, or calculations. These can be called anywhere.
+Such functions should only be logic and should not contain any frontend code. The usual file-ending is `.ts`.
 
 <br>
 
