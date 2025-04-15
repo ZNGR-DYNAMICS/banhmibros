@@ -10,9 +10,16 @@ import Layout from './components/Layout.tsx';
 import OrderPage from './pages/OrderPage.tsx';
 import MenuPage from './pages/MenuPage.tsx';
 import ContactPage from './pages/ContactPage.tsx';
-/*
+
 const passwordPrompt = (): void => {
-    const validPassword = import.meta.env.VITE_PAGE_LOCK_PASS;
+    const validPassword = import.meta.env.VITE_PASSWORD_PROTECTION;
+    
+    if (typeof validPassword === 'undefined' || validPassword === '') {
+        console.warn('Password protection variable not set. Skipping Protection.');
+        sessionStorage.setItem('unlocked', 'true');
+        return;
+    }
+    
     let userPassword = "";
 
     while (userPassword !== validPassword) {
@@ -29,14 +36,15 @@ const passwordPrompt = (): void => {
     sessionStorage.setItem('unlocked', 'true');
 };
 
-
 const checkPageUnlocked = (): boolean => {
     return sessionStorage.getItem('unlocked') === 'true';
 };
 
-if (import.meta.env.MODE !== 'prod' && !checkPageUnlocked()) {
+const needsPasswordProtection = import.meta.env.MODE === 'prev' || (typeof import.meta.env.MODE !== 'undefined' && import.meta.env.VITE_PASSWORD_PROTECTION !== '');
+
+if (needsPasswordProtection && !checkPageUnlocked()) {
     passwordPrompt();
-}*/
+}
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
