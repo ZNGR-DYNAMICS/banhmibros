@@ -22,7 +22,7 @@ type MenuSectionProps = {
 }
 
 /**
- * A full-screen animated menu section with scroll-linked transitions
+ * A full-screen animated menu section with scroll-linked transitions.
  * 
  * @remarks
  * Requires Framer Motion's ScrollYProgress context. Should be used within
@@ -41,7 +41,7 @@ type MenuSectionProps = {
  * />
  * ```
  * 
- * @param title - Section heading displayed in large text
+ * @param title - Menu section title displayed in large text
  * @param description - Brief section description
  * @param items - Array of menu items to display
  * @param imgSrc - Background image URL for the section
