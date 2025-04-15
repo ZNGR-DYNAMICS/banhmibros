@@ -24,10 +24,6 @@ type MenuSectionProps = {
 /**
  * A full-screen animated menu section with scroll-linked transitions.
  * 
- * @remarks
- * Requires Framer Motion's ScrollYProgress context. Should be used within
- * an AnimatedScrollContainer component for proper scroll tracking.
- * 
  * @example
  * ```tsx
  * <MenuSection
