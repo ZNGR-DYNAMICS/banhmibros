@@ -9,7 +9,7 @@ Has been created, to re-use a styled headline replacing titles or headings at th
 ## 1.2 Props
 `<Headline>` cannot be used without a child. 
 
-```ts
+```tsx
 interface HeadlineProps {
     children: React.ReactNode;
 }
@@ -21,8 +21,11 @@ interface HeadlineProps {
 - **User Interface**: The headline is a bold, simple text. The styling is as simple as possible, with the `poppins` font for all non-titles, and avoiding over-use of the main font `circula`.
 - **User Experience**: Provides the user with a bold, meaningful sentence. Instead of using titles or headings at the top of sections or components, this headline is used. 
 
+## 1.4 Potential Issues
+- (this section would describe potential issues, risks, etc. which are known). 
+
 ## 1.4 History
-(this section would cover how the component has been changed and what knowledge has been gained with it)
+- (this section would cover how the component has been changed and what knowledge has been gained with it)
 
 ### Similar Components
 [`/app/components/Reviews/ReviewHeadline.tsx`](../../app/components/Reviews/ReviewHeadline.tsx)
