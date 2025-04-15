@@ -9,6 +9,12 @@ interface LinkProps {
     'data-de'?: string;
 }
 
+/**
+ * Displays an animated link, allowing to set the content to be English and German translated.
+ * 
+ * @remarks
+ * Utilizes a hard-coded variant of the current useTranslation.tsx hook. This is subject to change.
+ */
 export default function Link({ href, className = '', children, 'data-en': enText, 'data-de': deText }: LinkProps) {
     const [hover, setHover] = useState(false);
     const textRef = useRef<HTMLParagraphElement>(null);
