@@ -29,8 +29,9 @@ jobs:
     # 5 Build app
     - name: Build app
       env:
+        VITE_PASSWORD_PROTECTION: ${{ secrets.VITE_PASSWORD_PROTECTION }}
         CI: false
-      run: npm run build
+      run: npm run prev
     
     # 6 Create .htaccess for SPA routing
     - name: Create .htaccess in build output (_dist)
