@@ -15,7 +15,12 @@ The web-experience is hosted on HostTech, more detailed information can be found
     - [2.2.1 Imports](#221-imports)
     - [2.2.2 Password Protection](#222-password-protection)
     - [2.2.3 Root Rendering](#223-root-rendering)
-  - [1.2 File Line Endings (LF / CRLF)](#12-file-line-endings-lf--crlf)
+  - [2.3 File Line Endings (LF / CRLF)](#23-file-line-endings-lf--crlf)
+- [3 Environments](#3-environments)
+  - [3.1 Vite Envs](#31-vite-envs)
+  - [3.2 Password Protection](#32-password-protection)
+    - [3.2.1 Setting the password](#321-setting-the-password)
+    - [3.2.2 Changing the password](#322-changing-the-password)
 
 
 ## 1.1 URL and Routes
@@ -88,6 +93,9 @@ For environments `dev` and `prev`, the page is locked through password-protectio
   - This does not require the user to enter the password again, on re-routing.
   - As soon as the user closes the tab, the session is revoked, and a password is required again on visit. 
 
+> [!NOTE] Further Documentation 
+> [3.2 Password Protection](#32-password-protection)
+
 ### 2.2.3 Root Rendering
 `createRoot(document.getElementById('root')!).render(...)` takes over the DOM and renders the root of the project. Routes are set directly in the code, allowing to render the respective pages, by additionally wrapping them in the layout component. 
 
@@ -113,7 +121,7 @@ For environments `dev` and `prev`, the page is locked through password-protectio
 
 <br>
 
-## 1.2 File Line Endings (LF / CRLF)
+## 2.3 File Line Endings (LF / CRLF)
 > The warning "This diff contains a change in line endings from 'LF' to 'CRLF'" is **completely unrelated** to your change in whitespace indentation from 2 to 4 spaces in your ESLint configuration.
 > 
 > 
@@ -202,3 +210,32 @@ For environments `dev` and `prev`, the page is locked through password-protectio
 > In summary, since you're aiming for LF endings and are already using them in VS Code, setting `git config --global core.autocrlf` to **`input`** is the recommended approach.
 > 
 > Response by Gemini 2.0 Flash 4/6/25
+
+# 3 Environments
+The Banh Mi Bros web-experience utilizes three environments for different purposes. 
+- Development (`dev`): Used to develop the application. 
+- Preview (`prev`): Used to get UAT and test the application in a live environment, together with [password protection](#222-password-protection). 
+
+## 3.1 Vite Envs
+Vite allows for using environment variables which are used during the build process (`vite build`).
+Environment variables with the `VITE_` prefix are served statically in JavaScript after building and are therefore exposed to the client. 
+
+Environment variables not utilizing the `VITE_` prefix, are not considered in the build process, and will not be statically served to the client.
+
+> [!CAUTION]
+> **Sensitive information, like passwords, credentials must not be stored inside the .env-file prefixed with `VITE_` as these will be exposed to the client.**
+>
+> Backend credentials should be stored inside `config.{env}.php`.
+
+## 3.2 Password Protection
+To restrict public user access to the preview web-experience, used for user acceptance tests by the client and testing, the web-experience should only be accessible through a defined password, communicated with the client. 
+
+> [!NOTE] Technical Documentation
+> [2.2.2 Password Protection](#222-password-protection)
+
+### 3.2.1 Setting the password
+The password is pre-defined by [@n-zngr](https://github.com/n-zngr) utilizing standard password requirements (letters, numbers, length, etc.). 
+
+### 3.2.2 Changing the password
+Incase the password is exposed to the public, a new password should be set, updating it respectively in the config. 
+
