@@ -40,9 +40,9 @@ const checkPageUnlocked = (): boolean => {
     return sessionStorage.getItem('unlocked') === 'true';
 };
 
-const needsPasswordProtection = import.meta.env.MODE === 'prev' || (typeof import.meta.env.MODE !== 'undefined' && import.meta.env.VITE_PASSWORD_PROTECTION !== '');
+const isPreviewEnv = import.meta.env.MODE === 'prev';
 
-if (needsPasswordProtection && !checkPageUnlocked()) {
+if (isPreviewEnv && !checkPageUnlocked()) {
     passwordPrompt();
 }
 
