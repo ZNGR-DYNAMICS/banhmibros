@@ -14,6 +14,17 @@ interface LinkProps {
  * 
  * @remarks
  * Utilizes a hard-coded variant of the current useTranslation.tsx hook. This is subject to change.
+ * 
+ * @example
+ * ```tsx
+ * <Link href='https://banh-mi-bros.ch' className='hover:text-bmb-orange'>Banh Mi Bros Website</Link>
+ * ```
+ * 
+ * @param href - Navigates the user to the according link
+ * @param classname - Allows for further content customizability
+ * @param children - sets the text-based content of the link
+ * @param data-en - displays English text on English-set browsers
+ * @param data-de - displays German text on German-set browsers
  */
 export default function Link({ href, className = '', children, 'data-en': enText, 'data-de': deText }: LinkProps) {
     const [hover, setHover] = useState(false);
