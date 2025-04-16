@@ -1,9 +1,9 @@
 import { motion, useTransform } from "framer-motion";
 import MenuItem from "./MenuItem";
 
-type MenuItemType = {
+type MenuItem = {
     typeId: number;
-    title: string;
+    title: { en: string, de: string };
     vietnameseName: string;
     is_vegetarian?: boolean;
     is_hot?: boolean;
@@ -11,7 +11,7 @@ type MenuItemType = {
 };
 
 type AnimatedMenuItemProps = {
-    item: MenuItemType;
+    item: MenuItem;
     index: number;
     scrollProgress: any;
 };

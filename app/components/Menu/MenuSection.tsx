@@ -2,9 +2,9 @@ import { motion, useTransform } from 'framer-motion';
 import AnimatedMenuItem from './AnimatedMenuItem';
 import ButtonTopRight from '../ButtonTopRight';
 
-type MenuItemType = {
+type MenuItem = {
     typeId: number;
-    title: string;
+    title: { 'en': string, 'de': string };
     vietnameseName: string;
     is_vegetarian?: boolean;
     is_hot?: boolean;
@@ -12,9 +12,9 @@ type MenuItemType = {
 };
 
 type MenuSectionProps = {
-    title: string;
-    description: string;
-    items: MenuItemType[];
+    title: { en: string, de: string };
+    description: { en: string, de: string };
+    items: MenuItem[];
     imgSrc: string;
     motionProps: any;
     mainScrollYProgress: any;
@@ -56,17 +56,19 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, description, items, im
                 <div className="absolute inset-0 w-full h-full bg-white-500" />
                 <div className="relative h-full flex flex-col md:flex-row text-black-500 p-4 md:p-8 lg:p-16 gap-4 md:gap-8 lg:gap-16">
                     <div className="flex flex-col gap-4 md:gap-8 lg:gap-16">
-                        <h1 className="font-circula circula-bold md:circula-extrabold lg:circula-black text-6xl md:text-7xl lg:text-10xl">
-                            {title}
+                        <h1 className="font-circula circula-bold md:circula-extrabold lg:circula-black text-6xl md:text-7xl lg:text-10xl text-nowrap"
+                            data-en={title.en} data-de={title.de}
+                        >
+                            {title.en}
                         </h1>
                         <div className="">
-                            <p className="text-lg md:text-xl lg:text-2xl">{description}</p>
+                            <p className="text-lg md:text-xl lg:text-2xl" data-en={description.en} data-de={description.de}>{description.en}</p>
                         </div>
-                        <div className='flex justify-center'>
-                            <img src={imgSrc} alt={title} />
+                        <div className='flex justify-center max-h-[172px] md:max-h-none'>
+                            <img className='object-cover' src={imgSrc} alt={title.en} />
                         </div>
                     </div>
-                    <div className="flex ml-auto flex-col">
+                    <div className="flex md:ml-auto flex-col">
                         <div className="flex flex-col flex-1">
                             {items.map((item, index) => (
                                 <AnimatedMenuItem
@@ -77,7 +79,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, description, items, im
                                 />
                             ))}
                         </div>
-                        <div className='ml-auto flex'>
+                        <div className='hidden ml-auto md:flex'>
                             <a href="/order">
                                 <ButtonTopRight width='w-40' color='black-500'>Order Online</ButtonTopRight>
                             </a>

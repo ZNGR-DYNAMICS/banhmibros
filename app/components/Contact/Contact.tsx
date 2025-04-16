@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
                 ) : (
                     <div className="relative h-[600px] w-full">
                         <img
-                            src="/Image-Map.png"
+                            src="/business/Image-Map.png"
                             alt="Map preview"
                             className="w-full h-full object-cover"
                         />
@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
                         </div>
                         <div className='w-full flex justify-between gap-4 pt-1'>
                             <p data-en="Sunday" data-de="Sonntag" />
-                            <p>Closed</p>
+                            <p data-en="Closed" data-de="Geschlossen" />
                         </div>
                     </div>
                 </div>

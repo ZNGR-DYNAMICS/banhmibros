@@ -1,19 +1,20 @@
 interface MenuItemProps {
     typeId: number;
-    title: string;
+    title: { en: string, de: string };
     vietnameseName: string;
     is_vegetarian?: boolean;
     is_hot?: boolean;   
     price: number;
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({ title, vietnameseName, is_vegetarian, is_hot, price }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ title, vietnameseName, is_vegetarian = false, is_hot = false, price }) => {
+    console.log(is_vegetarian);
     return (
         <div className="relative">
-            <div className='min-w-full lg:min-w-[480px] flex py-4 font-poppins'>
+            <div className='min-w-full lg:min-w-[320px] xl:min-w-[480px] flex py-4 font-poppins'>
                 <div className='flex flex-col flex-1'>
-                    <div className='inline-flex gap-2 font-medium text-lg md:text-xl'>
-                        {title}
+                    <div className='inline-flex gap-2 font-medium text-lg md:text-xl' data-en={title.en} data-de={title.de}>
+                        {title.en}
                         <div className='inline-flex'>
                             {is_vegetarian == true
                                 ? <svg width="20" height="20" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +37,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ title, vietnameseName, is_vegetaria
                     </div>
                 </div>
                 <div className='flex items-end text-base md:text-lg'>
-                    {price}
+                    {price.toFixed(2)}
                 </div>
             </div>
             <div className=''>
