@@ -11,7 +11,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ title, vietnameseName, is_vegetaria
     console.log(is_vegetarian);
     return (
         <div className="relative">
-            <div className='min-w-full lg:min-w-[480px] flex py-4 font-poppins'>
+            <div className='min-w-full lg:min-w-[320px] xl:min-w-[480px] flex py-4 font-poppins'>
                 <div className='flex flex-col flex-1'>
                     <div className='inline-flex gap-2 font-medium text-lg md:text-xl' data-en={title.en} data-de={title.de}>
                         {title.en}
