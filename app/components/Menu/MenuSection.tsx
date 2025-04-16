@@ -60,7 +60,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, description, items, im
                 <div className="absolute inset-0 w-full h-full bg-white-500" />
                 <div className="relative h-full flex flex-col md:flex-row text-black-500 p-4 md:p-8 lg:p-16 gap-4 md:gap-8 lg:gap-16">
                     <div className="flex flex-col gap-4 md:gap-8 lg:gap-16">
-                        <h1 className="font-circula circula-bold md:circula-extrabold lg:circula-black text-6xl md:text-7xl lg:text-10xl"
+                        <h1 className="font-circula circula-bold md:circula-extrabold lg:circula-black text-6xl md:text-7xl lg:text-10xl text-nowrap"
                             data-en={title.en} data-de={title.de}
                         >
                             {title.en}
@@ -83,7 +83,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({ title, description, items, im
                                 />
                             ))}
                         </div>
-                        <div className='ml-auto flex'>
+                        <div className='hidden ml-auto md:flex'>
                             <a href="/order">
                                 <ButtonTopRight width='w-40' color='black-500'>Order Online</ButtonTopRight>
                             </a>
