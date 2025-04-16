@@ -1,7 +1,7 @@
 import { useScroll, useTransform } from "framer-motion";
 import MenuSection from "./MenuSection";
 import { useLayoutScroll } from "../../hooks/useLayoutScroll";
-import { useTranslation } from "../../utils/translation";
+import { useTranslation } from "../../hooks/useTranslation";
 
 
 const Menu: React.FC = () => {
