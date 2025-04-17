@@ -5,7 +5,7 @@ import './index.css';
 import '../fonts/circula.css';
 import '../fonts/poppins.css';
 import App from './App.tsx';
-import Legal from './components/Legal/Legal.tsx';
+import LegalPage from './pages/LegalPage.tsx';
 import Layout from './components/Layout.tsx';
 import OrderPage from './pages/OrderPage.tsx';
 import MenuPage from './pages/MenuPage.tsx';
@@ -52,7 +52,7 @@ createRoot(document.getElementById('root')!).render(
         <Routes>
             <Route path="/" element={<App />} />
             <Route path="/menu" element={<Layout navColor='text-black-500'><MenuPage /></Layout>} />
-            <Route path="/legal" element={<Layout navColor='text-black-500'><Legal /></Layout>} />
+            <Route path="/legal" element={<Layout navColor='text-black-500'><LegalPage /></Layout>} />
             <Route path="/order" element={<Layout navColor='text-black-500'><OrderPage /></Layout>} />
             <Route path="/contact" element={<Layout navColor='text-black-500'><ContactPage /></Layout>} />
             <Route path="*" element={<Navigate to="/" replace />} />
