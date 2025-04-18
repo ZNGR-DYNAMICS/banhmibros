@@ -52,7 +52,7 @@ export default function Footer(){
             <div className='flex flex-col md:flex-row md:justify-between gap-8 md:gap-16 lg:gap-32'>
                 <div className="flex gap-16 justify-between md:justify-normal">
                     <Link href="/legal" data-en="Imprint" data-de="Impressum">Imprint</Link>
-                    <Link href="/legal" data-en="Privacy Policy" data-de="Datenschutz">Privacy Policy</Link>
+                    <Link href="/legal#privacy" data-en="Privacy Policy" data-de="Datenschutz">Privacy Policy</Link>
                 </div>
                 <div className='flex justify-between text-gray-500'>
                     <p className='pt-[0.125rem] text-sm md:text-base'>Banh Mi Bros © 2025</p>
