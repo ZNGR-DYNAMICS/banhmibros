@@ -75,9 +75,11 @@ const Contact: React.FC = () => {
                     <AnimatedText transitionColor="#FFF8EE" data-en="Or simply order online and enjoy at home." data-de="Oder bestell einfach online und geniess Banh Mis von Zuhause aus." />
                 </Headline>
                 <div className="w-fit flex">
-                    <ButtonTopRight color="white-500">
-                        Order Online
-                    </ButtonTopRight>
+                    <a href="/order">
+                        <ButtonTopRight color="white-500">
+                            Order Online
+                        </ButtonTopRight>
+                    </a>
                 </div>
             </div>
         </div>
