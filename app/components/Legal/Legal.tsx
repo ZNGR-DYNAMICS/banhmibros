@@ -48,8 +48,8 @@ const Legal: React.FC = () => {
                         data-de="Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören ausschliesslich BM Bros GmbH oder den speziell genannten Rechteinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen."
                     />
                 </div>
-                <div className='flex flex-col gap-4'>
-                    <h2 data-en="Privacy Policy" data-de="Datenschutz"/>
+                <div className='flex flex-col gap-4 pb-4 md:pb-8 lg:pb-16'>
+                    <h2 data-en="Privacy Policy" data-de="Datenschutz" id='privacy' />
                     <h3 data-en="1. General Information" data-de="1. Allgemeines" />
                     <p
                         data-en="Based on Article 13 of the Swiss Federal Constitution and the data protection provisions of the Swiss Confederation (Data Protection Act, DSG), every person has the right to protection of their privacy and protection against misuse of their personal data. We take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy policy. This privacy policy applies to the website banh-mi-bros.ch."
@@ -96,8 +96,8 @@ const Legal: React.FC = () => {
                     />
                     <h3 data-en="5. Third-Party Services" data-de="5. Dienste Dritter"/>
                     <p
-                        data-en="This website contains links to external ordering platforms such as JustEat.ch and UberEats. When you click on these links, you leave our website. Data processing on these external platforms is governed exclusively by the privacy policies and terms of use of the respective providers. We have no influence on their data processing practices. We recommend that you inform yourself about data protection on these external sites."
-                        data-de="Diese Website enthält Links zu externen Bestellplattformen wie JustEat.ch und UberEats. Wenn Sie auf diese Links klicken, verlassen Sie unsere Website. Die Datenverarbeitung auf diesen externen Plattformen unterliegt ausschliesslich den Datenschutzbestimmungen und Nutzungsbedingungen der jeweiligen Anbieter. Wir haben keinen Einfluss auf deren Datenverarbeitung. Wir empfehlen Ihnen, sich über den Datenschutz auf diesen externen Seiten zu informieren."
+                        data-en="This website contains links to external ordering platforms such as JustEat.ch and UberEats. When you click on these links, you leave our website. Your collected data from the banh-mi-bros.ch website are not explicitly sent to mentioned third-party platforms (JustEat, UberEats). Data processing on these external platforms is governed exclusively by the privacy policies and terms of use of the respective providers. We have no influence on their data processing practices. We recommend that you inform yourself about data protection on these external sites."
+                        data-de="Diese Website enthält Links zu externen Bestellplattformen wie JustEat.ch und UberEats. Wenn Sie auf diese Links klicken, verlassen Sie unsere Website. Ihre gesammelten Daten von der banh-mi-bros.ch Webseite werden nicht explizit an genannte Drittanbieter Plattformen (JustEat, UberEats) übermittelt. Die Datenverarbeitung auf diesen externen Plattformen unterliegt ausschliesslich den Datenschutzbestimmungen und Nutzungsbedingungen der jeweiligen Anbieter. Wir haben keinen Einfluss auf deren Datenverarbeitung. Wir empfehlen Ihnen, sich über den Datenschutz auf diesen externen Seiten zu informieren."
                     />
                     <div className='flex flex-col'>
                         <a className='hover:text-bmb-orange transition-colors duration-300' href="https://www.just-eat.ch/privacy-policy" target="_blank" rel="noopener noreferrer" data-en="Privacy Policy JustEat.ch" data-de="Datenschutzerklärung JustEat.ch"></a>
