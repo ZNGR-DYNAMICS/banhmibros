@@ -66,11 +66,10 @@ const Navigation: React.FC<NavigationProps> = ({ isOpen, setIsOpen }) => {
             {/* Navigation Left - Links */}
             <div className='absolute top-4 left-4 lg:top-8 lg:left-8 flex flex-col flex-wrap gap-8 lg:gap-16'>
                 <nav className='flex flex-col lg:gap-2 text-8xl md:text-8xl lg:text-9xl circula-bold md:circula-extrabold lg:circula-black'>
-                    <NavLink className='' href="/">Home</NavLink>
-                    <NavLink className='' href="/menu">Menu</NavLink>
-                    <NavLink className='' href="/banh-mi">Banh Mi</NavLink>
-                    <NavLink className='' href="/order">Order</NavLink>
-                    <NavLink className='' href="/catering">Catering</NavLink>
+                    <NavLink href="/">Home</NavLink>
+                    <NavLink href="/menu">Menu</NavLink>
+                    <NavLink href="/order">Order</NavLink>
+                    <NavLink href="/contact">Contact</NavLink>
                 </nav>
 
                 {/* Address (Small Screen) */}
