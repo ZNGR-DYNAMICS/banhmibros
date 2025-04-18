@@ -10,13 +10,12 @@ export default function Footer(){
                     <p>Banh Mi Bros</p>
                     <Link href='https://maps.app.goo.gl/AUqCkvhFoQK2G1iX7' className='hover:text-bmb-orange'>Metzgergasse 15</Link>
                     <p>9000 St.Gallen</p>
-                    <Link href="mailto:hello@banh-mi-bros.ch" className='hover:text-bmb-orange'>hello@banh-mi-bros.ch</Link>
+                    <Link href="mailto:hello@banh-mi-bros.ch" className='hover:text-bmb-orange'>hello[at]banh-mi-bros.ch</Link>
                     <Link href="tel:0784809223" className='hover:text-bmb-orange'>078 480 92 23</Link>
                 </div>
                 <div className="flex flex-col gap-1">
                     <Link href="/menu">Menu</Link>
                     <Link href="/order" data-en='Order' data-de='Bestellen'>Order</Link>
-                    <Link href="/process">Process</Link>
                     <Link href="/contact" data-en='Contact' data-de='Kontakt'>Contact</Link>
                 </div>
                 <div className="flex flex-col gap-1 items-end md:items-start">
