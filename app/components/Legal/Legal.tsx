@@ -28,7 +28,11 @@ const Legal: React.FC = () => {
                     <Link href='https://zngr-dynamics.ch'>zngr-dynamics.ch</Link>
                 </div>
                 <div className='flex flex-col gap-4'>
-                    <h2 data-en="Disclaimers" data-de="Haftungsausschluss"/>
+                    <h2 data-en="Disclaimers" data-de="Hinweise"/>
+                    <p 
+                        data-en="In these disclaimers, the terms 'we', 'us', 'our', or 'author' refer to the operator of this website, BM Bros GmbH. The term 'you' or 'user' refers to any person visiting or using this website." 
+                        data-de='In diesen Hinweisen beziehen sich die Begriffe "wir", "uns", "unser" oder "Autor" auf den Betreiber dieser Website, BM Bros GmbH. Der Begriff "Sie" oder "Nutzer" bezieht sich auf jede Person, die diese Website besucht oder nutzt.' />
+                    <h3 data-en="Liability Limitations" data-de="Haftungsausschluss"/>
                     <p
                         data-en="The author assumes no liability whatsoever for the correctness, accuracy, timeliness, reliability, and completeness of the information provided. Liability claims against the author for material or immaterial damage resulting from access to, use or non-use of the published information, misuse of the connection, or technical faults are excluded. All offers are non-binding. The author expressly reserves the right to change, supplement, or delete parts of the pages or the entire offer without separate announcement, or to cease publication temporarily or permanently."
                         data-de="Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen. Alle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen."
