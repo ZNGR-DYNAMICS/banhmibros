@@ -51,7 +51,7 @@ export default function Link({ href, className = '', children, 'data-en': enText
                 }
             }
             
-            setTimeout(updateDimensions, 0);
+            setTimeout(updateDimensions, 50);
 
             window.addEventListener('resize', updateDimensions);
 
