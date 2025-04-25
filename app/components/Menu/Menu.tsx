@@ -40,9 +40,9 @@ const Menu: React.FC = () => {
                         { typeId: 1, title: { en: 'Spring rolls with chicken', de: 'Frühlingsrollen mit Poulet' }, vietnameseName: "Cha Gio", is_vegetarian: false, price: 9.90 },
                         { typeId: 2, title: { en: 'Vietnamese summer rolls', de: 'Vietnamesische Sommerrollen' }, vietnameseName: "Goi Cuon", is_vegetarian: true, price: 8.90 },
                         { typeId: 3, title: { en: 'Fried vegetarian spring rolls', de: 'Vegetarische Frühlingsrollen' }, vietnameseName: "Cha Gio Chay", is_vegetarian: true, price: 6.90 },
-                        { typeId: 4, title: { en: 'Fried shrimps', de: 'Frühlingsrollen mit Poulet' }, vietnameseName: "Tom Chien Bot", is_vegetarian: false, price: 9.90 },
-                        { typeId: 5, title: { en: 'Fried crab balls', de: 'Frittierte Krabbenbällchen' }, vietnameseName: "Cang Cua Chien", is_vegetarian: false, price: 9.90 },
-                        { typeId: 6, title: { en: 'Vietnamese mango salad (Tofu or Shrimps)', de: 'Vietnamesischer Mangosalat (Tofu oder Crevetten)' }, vietnameseName: "Goi xoai Viet Nam", is_vegetarian: true, price: 9.90 },
+                        { typeId: 4, title: { en: 'Batter-fried shrimps', de: 'Frittierte Crevetten' }, vietnameseName: "Tom Chien Bot", is_vegetarian: false, price: 9.90 },
+                        { typeId: 5, title: { en: 'Batter-fried crab balls', de: 'Frittierte Krabbenbällchen' }, vietnameseName: "Cang Cua Chien", is_vegetarian: false, price: 9.90 },
+                        { typeId: 6, title: { en: 'Vietnamese mango salad (Tofu or Shrimps)', de: 'Vietnamesischer Mangosalat (Tofu oder Crevetten)' }, vietnameseName: "Goi xoai Viet Nam", is_vegetarian: true, price: 8.90 },
                     ]}
                     imgSrc="./food/BanhMi.png"
                     motionProps={{ style: { y: section1Y, opacity: section1Opacity } }}
@@ -58,11 +58,11 @@ const Menu: React.FC = () => {
                     items={[
                         { typeId: 7, title: { en: 'Tofu', de: 'Tofu' }, vietnameseName: "Banh Mi Chay", is_vegetarian: true, price: 11.90 },
                         { typeId: 8, title: { en: 'Oyster mushrooms', de: 'Austernpilze' }, vietnameseName: "Banh Mi Nam", is_vegetarian: true, price: 12.90 },
-                        { typeId: 9, title: { en: 'Fried Chicken, lemon-grass, chili', de: 'Gebratene Pouletbrust, Zitronengrass, Chili' }, vietnameseName: "Banh Mi Ga", is_vegetarian: false, is_hot: true, price: 11.90 },
+                        { typeId: 9, title: { en: 'Sautéed lemongrass-chili chicken breast', de: 'Gebratene Pouletbrust, Zitronengrass, Chili' }, vietnameseName: "Banh Mi Ga", is_vegetarian: false, is_hot: true, price: 11.90 },
                         { typeId: 10, title: { en: 'Black pepper sauce beef', de: 'Rindfleisch mit schwarzer Pfeffersauce' }, vietnameseName: "Banh Mi Bo", is_vegetarian: false, price: 13.90 },
                         { typeId: 11, title: { en: 'Grilled Char-siu pork', de: 'Gegrilltes Char siu Schweinefleisch' }, vietnameseName: "Banh Mi Xa Xiu", is_vegetarian: false, price: 12.90 },
                         { typeId: 12, title: { en: 'Grilled pork belly with sesame', de: 'Gegrillter Schweinebauch mit Sesam' }, vietnameseName: "Banh Mi Thit Nuong", is_vegetarian: false, price: 13.90 },
-                        { typeId: 13, title: { en: 'Char-siu pork, beef', de: 'Char siu Schweinefleisch, Rindfleisch' }, vietnameseName: "Banh Mi Special", is_vegetarian: false, price: 15.90 },
+                        { typeId: 13, title: { en: 'Char-siu pork, grilled pork belly, beef', de: 'Char siu Schweinefleisch, gegrillter Schweinebauch, Rindfleisch' }, vietnameseName: "Banh Mi Special", is_vegetarian: false, price: 15.90 },
                     ]}
                     imgSrc="./food/BanhMiWithDrink.png"
                     motionProps={{ style: { y: section2Y, opacity: section2Opacity } }}
@@ -89,9 +89,9 @@ const Menu: React.FC = () => {
                     title={{ en: 'Bun', de: 'Bun' }}
                     description={{ 
                         en: 'Vietnamese rice noodles served with salad, cucumber, carrots, peanuts, fish sauce and your favorite addition.', 
-                        de: 'Vietnamesische Reisnudeln.'}}
+                        de: 'Vietnamesische Reisnudeln serviert mit Salat, Gurke, Karotte, Erdnuss, Fischsauce und deiner lieblings Zutat.'}}
                     items={[
-                        { typeId: 18, title: { en: 'Grilled pork strips, ', de: 'Gegrillte Schweinebauchstreifen'}, vietnameseName: "Bun Thit Nuong", is_vegetarian: false, price: 21.90 },
+                        { typeId: 18, title: { en: 'Grilled pork strips', de: 'Gegrillte Schweinebauchstreifen'}, vietnameseName: "Bun Thit Nuong", is_vegetarian: false, price: 21.90 },
                         { typeId: 19, title: { en: 'Sautéed beef', de: 'Gebratenes Rindfleisch'}, vietnameseName: "Bu Bo Nam Bo", is_vegetarian: false, price: 23.90 },
                         { typeId: 20, title: { en: 'Vietnamese spring rolls', de: 'Vietnamesische Frühlingsrollen'}, vietnameseName: "Bun Nem 3 Pcs.", is_vegetarian: true, price: 20.90 },
                         { typeId: 21, title: { en: 'Rice noodles with tofu', de: 'Reisnudeln mit Tofu'}, vietnameseName: "Bun Dau", is_vegetarian: true, price: 19.90 },
@@ -103,11 +103,13 @@ const Menu: React.FC = () => {
                 />
                 <MenuSection
                     title={{ en: 'Drinks', de: 'Drinks' }}
-                    description={{ en: 'A set of self-made drinks from lemonade to coffee.', de: 'Hausgemachte Getränke, von Limonaden bis hin zu Kaffee.' }}
+                    description={{ 
+                        en: 'A set of fresh, self-made drinks from lemonade to iced coffee.', 
+                        de: 'Hausgemachte Getränke, von Limonaden bis hin zu Kaffee.' }}
                     items={[
-                        { typeId: 22, title: { en: 'Homemade lemonade from limes and mint', de: 'Hausgemachte Limo aus Limette und Minze' }, vietnameseName: "Nuoc Chanh", is_vegetarian: false, price: 5.90 },
-                        { typeId: 23, title: { en: 'Homemade lemonade from passion fruit, limes, mint', de: 'Hausgemachte Limo aus Passionsfrucht, Limette, Minze' }, vietnameseName: "Nuoc Chanh Leo", is_vegetarian: false, price: 5.90 },
-                        { typeId: 24, title: { en: 'Vietnamese drip coffee by Trung Nguyen, condensed milk', de: 'Vietnamesischer Kaffee von Trung Nguyen, kondensierte Milch' }, vietnameseName: "Bro's Iced Coffee", is_vegetarian: false, price: 5.90 },
+                        { typeId: 22, title: { en: 'Homemade lemonade from limes and mint', de: 'Hausgemachte Limo aus Limetten und Minze' }, vietnameseName: "Nuoc Chanh", is_vegetarian: false, price: 5.90 },
+                        { typeId: 23, title: { en: 'Homemade lemonade from passion fruit, limes, mint', de: 'Hausgemachte Limo aus Passionsfrucht, Limetten, Minze' }, vietnameseName: "Nuoc Chanh Leo", is_vegetarian: false, price: 5.90 },
+                        { typeId: 24, title: { en: 'Vietnamese drip coffee fropm Trung Nguyen with condensed milk', de: 'Vietnamesischer Filterkaffee von Trung Nguyen mit kondensierter Milch' }, vietnameseName: "Bro's Iced Coffee", is_vegetarian: false, price: 5.90 },
                     ]}
                     imgSrc="./food/BanhMi.png"
                     motionProps={{ style: { y: section5Y, opacity: section5Opacity } }}
