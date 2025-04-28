@@ -44,7 +44,7 @@ const Menu: React.FC = () => {
                         { typeId: 5, title: { en: 'Batter-fried crab balls', de: 'Frittierte Krabbenbällchen' }, vietnameseName: "Cang Cua Chien", is_vegetarian: false, price: 9.90 },
                         { typeId: 6, title: { en: 'Vietnamese mango salad (Tofu or Shrimps)', de: 'Vietnamesischer Mangosalat (Tofu oder Crevetten)' }, vietnameseName: "Goi xoai Viet Nam", is_vegetarian: true, price: 8.90 },
                     ]}
-                    imgSrc="./food/BanhMi.png"
+                    imgSrc="./food/SpringRolls.png"
                     motionProps={{ style: { y: section1Y, opacity: section1Opacity } }}
                     mainScrollYProgress={scrollYProgress}
                     animationRange={[0.8, 0.16]}
