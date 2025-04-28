@@ -37,7 +37,7 @@ const App: React.FC = () => {
                 <LayoutScrollProvider value={scrollRef}>
                     <div className='relative pointer-events-none'>
                         <header className='flex flex-col min-h-dvh bg-cover bg-center gap-8 p-4 sm:p-8 text-white-500 transition-colors pointer-events-auto'
-                            style={{ backgroundImage: "url('./food/BanhMi.png')" }}>
+                            style={{ backgroundImage: "url('./food/MovieBanhMi.png')" }}>
                             <div className='flex'>
                                 <button
                                     className="block mt-4 sm:mt-0 transition duration-200 hover:text-bmb-orange"

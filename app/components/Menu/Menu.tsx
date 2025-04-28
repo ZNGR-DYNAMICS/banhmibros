@@ -64,7 +64,7 @@ const Menu: React.FC = () => {
                         { typeId: 12, title: { en: 'Grilled pork belly with sesame', de: 'Gegrillter Schweinebauch mit Sesam' }, vietnameseName: "Banh Mi Thit Nuong", is_vegetarian: false, price: 13.90 },
                         { typeId: 13, title: { en: 'Char-siu pork, grilled pork belly, beef', de: 'Char siu Schweinefleisch, gegrillter Schweinebauch, Rindfleisch' }, vietnameseName: "Banh Mi Special", is_vegetarian: false, price: 15.90 },
                     ]}
-                    imgSrc="./food/BanhMiWithDrink.png"
+                    imgSrc="./food/EditedMovieBanhMi.png"
                     motionProps={{ style: { y: section2Y, opacity: section2Opacity } }}
                     mainScrollYProgress={scrollYProgress}
                     animationRange={[0.24, 0.32]}
@@ -80,7 +80,7 @@ const Menu: React.FC = () => {
                         { typeId: 16, title: { en: 'Beef', de: 'Rindfleisch' }, vietnameseName: "Pho Bo", is_vegetarian: false, price: 21.90 },
                         { typeId: 17, title: { en: 'Beef & Chicken', de: 'Rindfleisch und Poulet' }, vietnameseName: "Pho Bo & Ga", is_vegetarian: false, price: 22.90 },
                     ]}
-                    imgSrc="./food/BanhMi.png"
+                    imgSrc="./food/MoviePho.png"
                     motionProps={{ style: { y: section3Y, opacity: section3Opacity } }}
                     mainScrollYProgress={scrollYProgress}
                     animationRange={[0.40, 0.48]}
@@ -96,7 +96,7 @@ const Menu: React.FC = () => {
                         { typeId: 20, title: { en: 'Vietnamese spring rolls', de: 'Vietnamesische Frühlingsrollen'}, vietnameseName: "Bun Nem 3 Pcs.", is_vegetarian: true, price: 20.90 },
                         { typeId: 21, title: { en: 'Rice noodles with tofu', de: 'Reisnudeln mit Tofu'}, vietnameseName: "Bun Dau", is_vegetarian: true, price: 19.90 },
                     ]}
-                    imgSrc="./food/BanhMi.png"
+                    imgSrc="./food/MovieBun.png"
                     motionProps={{ style: { y: section4Y, opacity: section4Opacity } }}
                     mainScrollYProgress={scrollYProgress}
                     animationRange={[0.56, 0.64]}
@@ -111,7 +111,7 @@ const Menu: React.FC = () => {
                         { typeId: 23, title: { en: 'Homemade lemonade from passion fruit, limes, mint', de: 'Hausgemachte Limo aus Passionsfrucht, Limetten, Minze' }, vietnameseName: "Nuoc Chanh Leo", is_vegetarian: false, price: 5.90 },
                         { typeId: 24, title: { en: 'Vietnamese drip coffee fropm Trung Nguyen with condensed milk', de: 'Vietnamesischer Filterkaffee von Trung Nguyen mit kondensierter Milch' }, vietnameseName: "Bro's Iced Coffee", is_vegetarian: false, price: 5.90 },
                     ]}
-                    imgSrc="./food/BanhMi.png"
+                    imgSrc="./food/BanhMiWithDrink.png"
                     motionProps={{ style: { y: section5Y, opacity: section5Opacity } }}
                     mainScrollYProgress={scrollYProgress}
                     animationRange={[0.72, 0.80]}
