@@ -29,19 +29,33 @@ jobs:
     # 5 Build app
     - name: Build app
       env:
+        VITE_PASSWORD_PROTECTION: ${{ secrets.VITE_PASSWORD_PROTECTION }}
         CI: false
-      run: npm run build
+      run: npm run prev
     
-    # 6 Copy api files and dist folder to preview
+    # 6 Create .htaccess for SPA routing
+    - name: Create .htaccess in build output (_dist)
+      run: |
+        echo '<IfModule mod_rewrite.c>' > _dist/.htaccess
+        echo '  RewriteEngine On' >> _dist/.htaccess
+        echo '  RewriteBase /' >> _dist/.htaccess
+        echo '  RewriteCond %{REQUEST_FILENAME} -f [OR]' >> _dist/.htaccess
+        echo '  RewriteCond %{REQUEST_FILENAME} -d' >> _dist/.htaccess
+        echo '  RewriteRule ^ - [L]' >> _dist/.htaccess
+        echo '  RewriteRule ^ index.html [L]' >> _dist/.htaccess
+        echo '</IfModule>' >> _dist/.htaccess
+        echo 'Created _dist/.htaccess'
+    
+    # 7 Copy api files to _dist
+    - name: Copy API files to build output
+      run: cp -R api/* _dist/
+    
+    # 8 Copy api files and dist folder to preview
     - name: Deploy to preview branch
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        mkdir dist
-        cp -R api dist/
-        cp -R _dist/* dist/
-        
-        cd dist
+        cd _dist
         git init
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
@@ -49,4 +63,4 @@ jobs:
         git add .
         git commit -m "Deploy preview build from dev"
         git branch -M preview
-        git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ZNGR-DYNAMICS/banhmibros-vite.git preview
+        git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ZNGR-DYNAMICS/banhmibros.git preview

@@ -7,7 +7,7 @@
     "dev": "vite --mode dev",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
+    "prev": "vite build --mode prev",
     "test": "vitest"
   },
   "dependencies": {

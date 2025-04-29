@@ -1,5 +1,5 @@
 import Link from './Link';
-import { useTranslation } from '../utils/translation';
+import { useTranslation } from '../hooks/useTranslation';
 
 export default function Footer(){
     useTranslation();
@@ -10,14 +10,12 @@ export default function Footer(){
                     <p>Banh Mi Bros</p>
                     <Link href='https://maps.app.goo.gl/AUqCkvhFoQK2G1iX7' className='hover:text-bmb-orange'>Metzgergasse 15</Link>
                     <p>9000 St.Gallen</p>
-                    <Link href="mailto:hello@banh-mi-bros.ch" className='hover:text-bmb-orange'>hello@banh-mi-bros.ch</Link>
+                    <Link href="mailto:hello@banh-mi-bros.ch" className='hover:text-bmb-orange'>hello[at]banh-mi-bros.ch</Link>
                     <Link href="tel:0784809223" className='hover:text-bmb-orange'>078 480 92 23</Link>
                 </div>
                 <div className="flex flex-col gap-1">
                     <Link href="/menu">Menu</Link>
                     <Link href="/order" data-en='Order' data-de='Bestellen'>Order</Link>
-                    <Link href="/process">Process</Link>
-                    <Link href="/location" data-en='Location' data-de='Standort'>Location</Link>
                     <Link href="/contact" data-en='Contact' data-de='Kontakt'>Contact</Link>
                 </div>
                 <div className="flex flex-col gap-1 items-end md:items-start">
@@ -47,13 +45,13 @@ export default function Footer(){
                 </div>
                 <div className='flex justify-between pt-1'>
                     <p data-en="Sunday" data-de="Sonntag" />
-                    <p>Closed</p>
+                    <p data-en="Closed" data-de="Geschlossen" />
                 </div>
             </div>
             <div className='flex flex-col md:flex-row md:justify-between gap-8 md:gap-16 lg:gap-32'>
                 <div className="flex gap-16 justify-between md:justify-normal">
                     <Link href="/legal" data-en="Imprint" data-de="Impressum">Imprint</Link>
-                    <Link href="/legal" data-en="Privacy Policy" data-de="Datenschutz">Privacy Policy</Link>
+                    <Link href="/legal#privacy" data-en="Privacy Policy" data-de="Datenschutz">Privacy Policy</Link>
                 </div>
                 <div className='flex justify-between text-gray-500'>
                     <p className='pt-[0.125rem] text-sm md:text-base'>Banh Mi Bros © 2025</p>
