@@ -1,18 +1,127 @@
 
 # 1 Architecture
-This section describes the overall structure of the project. It includes details about the PHP server for backend logic, the MySQL database for data storage, and the Vite-powered React frontend for the user interface. The API layer connecting these components is also outlined to give a clear understanding of how the project is structured.  
+This section describes the overall structure of the project repository. It includes details about the PHP server for backend logic, the MySQL database for data storage, and the Vite-powered React frontend for the user interface. The API layer connecting these components is also outlined to give a clear understanding of how the project is structured.  
 The web-experience is hosted on HostTech, more detailed information can be found in [DevOps](devops.md).
 
 - [1 Architecture](#1-architecture)
-  - [1.1 Components](#11-components)
-  - [1.2 File Line Endings (LF / CRLF)](#12-file-line-endings-lf--crlf)
+  - [1.1 URL and Routes](#11-url-and-routes)
+  - [1.2 Pages](#12-pages)
+  - [1.3 Components](#13-components)
+  - [1.4 Hooks](#14-hooks)
+  - [1.5 Utils](#15-utils)
+- [2 Entry Point Architecture](#2-entry-point-architecture)
+  - [2.1 `index.html`](#21-indexhtml)
+  - [2.2 `main.tsx`](#22-maintsx)
+    - [2.2.1 Imports](#221-imports)
+    - [2.2.2 Password Protection](#222-password-protection)
+    - [2.2.3 Root Rendering](#223-root-rendering)
+  - [2.3 File Line Endings (LF / CRLF)](#23-file-line-endings-lf--crlf)
+- [3 Environments](#3-environments)
+  - [3.1 Vite Envs](#31-vite-envs)
+  - [3.2 Password Protection](#32-password-protection)
+    - [3.2.1 Setting the password](#321-setting-the-password)
+    - [3.2.2 Changing the password](#322-changing-the-password)
 
 
-## 1.1 Components
-Re-usable front-end components for the user-interface. The styling of components should not have any spacing, to be able to set the spacing according to the page's needs. 
-Components should be responsive by default.
+## 1.1 URL and Routes
+To render the different pages should be straightforward, including the following principles. 
+- Routes and names of the pages should be English.
+- Route names should be short (less than 12 characters if reasonable<sup>1</sup>) and direct, e.g. `domain.com/legal` for both privacy-policy and imprint.
+  - **1** Page titles who are naturally long and fitting for the page may be longer, though a shorter fitting name is encouraged.
 
-## 1.2 File Line Endings (LF / CRLF)
+Route names are determined inside [`main.tsx`](#22-maintsx) from the React, Vite side. The server side requires a different approach. 
+
+## 1.2 Pages
+[`/app/pages`](../app/pages/)
+
+Hold the various pages defined by the url `domain.com/{page-name}` and should be composed of the following.
+- Individual pages should not be fully hard-coded, meaning they should be built from multiple individual components. 
+- Pages should be wrapped in the `layout`, providing the `navigation` and `footer`.
+- Pages should style individual components, e.g. spacing, to fit the page's needs.  
+
+## 1.3 Components
+[`/app/components`](../app/components)
+
+Frontend components which can be re-used in multiple pages, or sub-components. 
+Components should adhere the following principles:  
+- Follow the mobile first principle and always be responsive for mobile, tablet, and desktop media-queries.
+- Should not contain style-spacing inside the component, like padding or margin, and instead a parent-div should set the content spacing.
+  - This ensures re-usability of the component, in positions that were not planned initially.
+
+Individual Components are documented in-depth under the [`/app/docs/components`](/components/Headline.md) directory. 
+
+## 1.4 Hooks
+[`/app/hooks`](../app/hooks)
+
+Hooks are reusable stateful logic which can call React features like context, `useState`, or `useEffect`.
+
+- Can't be utilized inside loops, conditions, nested functions, or `try` / `catch` / `finally` blocks.
+- Must follow the React [Rules of Hooks](https://react.dev/reference/rules/rules-of-hooks)
+
+## 1.5 Utils
+[`/app/utils`](../app/utils)
+
+Utils are plain javascript/typescript functions that perform operations without any React dependencies, like formatting, or calculations. These can be called anywhere.
+Such functions should only be logic and should not contain any frontend code. The usual file-ending is `.ts`.
+
+<br>
+
+# 2 Entry Point Architecture
+The application's structure begins with the standard web entry point and then transitions into the React application powered by Vite.
+
+## 2.1 `index.html`
+`/`
+
+Serves as the single entry point to the web-experience. It's the initial HTML-file the browser loads. 
+- Contains the `<head>` tag, with title and other browser information.
+- The `<body>` renders the root through it's id, set in [`main.tsx`](#22-maintsx)
+- Contains a script tag, rendering main.tsx
+
+## 2.2 `main.tsx`
+[`/app`](../app/)
+
+This TypeScript file is the primary entry point for the React application. It's the first piece of the application-specific code to be executed after the browser loads [`index.html`](#21-indexhtml)
+
+### 2.2.1 Imports
+Styling, fonts, and components used in `main.tsx` are imported here, like pages which are required to render. 
+Also is the layout context imported here, used to wrap pages the the `LayoutScroll`. Imports required by React to render the page correctly, can also be found here, like `Routes`, `Route`, `BrowserRouter`, and `Navigate` from `'react-router-dom'`.
+
+### 2.2.2 Password Protection
+For environments `dev` and `prev`, the page is locked through password-protection. Production is not affected by this.
+- A simple alert is displayed, requiring the user to set the correct password stored in the `env`-files. 
+- On successfully logging in, the page renders and the succeeded state is stored in `sessionStorage`.
+  - This does not require the user to enter the password again, on re-routing.
+  - As soon as the user closes the tab, the session is revoked, and a password is required again on visit. 
+
+> [!NOTE] Further Documentation 
+> [3.2 Password Protection](#32-password-protection)
+
+### 2.2.3 Root Rendering
+`createRoot(document.getElementById('root')!).render(...)` takes over the DOM and renders the root of the project. Routes are set directly in the code, allowing to render the respective pages, by additionally wrapping them in the layout component. 
+
+```ts
+<StrictMode>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/menu" element={<Layout navColor='text-black-500'><MenuPage /></Layout>} />
+            <Route path="/legal" element={<Layout navColor='text-black-500'><Legal /></Layout>} />
+            <Route path="/order" element={<Layout navColor='text-black-500'><OrderPage /></Layout>} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+    </BrowserRouter>
+</StrictMode>,
+```
+
+- `<StrictMode>` highlights potential problems in teh application during development. It activates additional checks and warnings for descendants.
+- `<BrowserRouter>` enables client-side routing through using the browser's history API. It wraps the entire application's routing configuration.
+- `<Routes>` acts as a container for individual route definitions. It renders the first `Route` matching the current URL.
+- `<Route path="..." element={<Component />} />`
+
+
+<br>
+
+## 2.3 File Line Endings (LF / CRLF)
 > The warning "This diff contains a change in line endings from 'LF' to 'CRLF'" is **completely unrelated** to your change in whitespace indentation from 2 to 4 spaces in your ESLint configuration.
 > 
 > 
@@ -101,3 +210,32 @@ Components should be responsive by default.
 > In summary, since you're aiming for LF endings and are already using them in VS Code, setting `git config --global core.autocrlf` to **`input`** is the recommended approach.
 > 
 > Response by Gemini 2.0 Flash 4/6/25
+
+# 3 Environments
+The Banh Mi Bros web-experience utilizes three environments for different purposes. 
+- Development (`dev`): Used to develop the application. 
+- Preview (`prev`): Used to get UAT and test the application in a live environment, together with [password protection](#222-password-protection). 
+
+## 3.1 Vite Envs
+Vite allows for using environment variables which are used during the build process (`vite build`).
+Environment variables with the `VITE_` prefix are served statically in JavaScript after building and are therefore exposed to the client. 
+
+Environment variables not utilizing the `VITE_` prefix, are not considered in the build process, and will not be statically served to the client.
+
+> [!CAUTION]
+> **Sensitive information, like passwords, credentials must not be stored inside the .env-file prefixed with `VITE_` as these will be exposed to the client.**
+>
+> Backend credentials should be stored inside `config.{env}.php`.
+
+## 3.2 Password Protection
+To restrict public user access to the preview web-experience, used for user acceptance tests by the client and testing, the web-experience should only be accessible through a defined password, communicated with the client. 
+
+> [!NOTE] Technical Documentation
+> [2.2.2 Password Protection](#222-password-protection)
+
+### 3.2.1 Setting the password
+The password is pre-defined by [@n-zngr](https://github.com/n-zngr) utilizing standard password requirements (letters, numbers, length, etc.). 
+
+### 3.2.2 Changing the password
+Incase the password is exposed to the public, a new password should be set, updating it respectively in the config. 
+

@@ -20,24 +20,43 @@ jobs:
       with: 
         node-version: 22
     
-    # 3 Install dependencies, build app
-    - name: Install dependencies and build
+    # 3 Install dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # 4 Run tests
+    - name: Run tests
+      run: npm test
+
+    # 5 Build app (files placed in _dist directory)
+    - name: Build app
       env:
         CI: false
-      run: |
-        npm install
-        npm run build
+      run: npm run build
     
-    # 4 Copy api files and React build folder to deployment branch
+    # 6 Create .htaccess for SPA routing
+    - name: Create .htaccess in build output (_dist)
+      run: |
+        echo '<IfModule mod_rewrite.c>' > _dist/.htaccess
+        echo '  RewriteEngine On' >> _dist/.htaccess
+        echo '  RewriteBase /' >> _dist/.htaccess
+        echo '  RewriteCond %{REQUEST_FILENAME} -f [OR]' >> _dist/.htaccess
+        echo '  RewriteCond %{REQUEST_FILENAME} -d' >> _dist/.htaccess
+        echo '  RewriteRule ^ - [L]' >> _dist/.htaccess
+        echo '  RewriteRule ^ index.html [L]' >> _dist/.htaccess
+        echo '</IfModule>' >> _dist/.htaccess
+        echo 'Created _dist/.htaccess'
+    
+    # 7 Copy api files to _dist
+    - name: Copy API files to build output
+      run: cp -R api/* _dist/
+    
+    # 8 Copy api files and dist folder to preview
     - name: Deploy to production branch
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        mkdir dist
-        cp -R api dist/
-        cp -R _dist/* dist/
-
-        cd dist
+        cd _dist
         git init
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
@@ -45,4 +64,4 @@ jobs:
         git add .
         git commit -m "Deploy production build from main"
         git branch -M production
-        git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ZNGR-DYNAMICS/banhmibros-vite.git production
+        git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ZNGR-DYNAMICS/banhmibros.git production

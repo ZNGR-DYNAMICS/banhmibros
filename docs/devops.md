@@ -1,5 +1,5 @@
 # DevOps
-This document outlines the DevOps process for the Banh Mi Bros project, detailing the integration with development and operations across the entire software lifecycle enabling continuous delivery. 
+This document outlines the DevOps process for the Banh Mi Bros project, detailing the integration with development and operations across the entire software lifecycle enabling continuous delivery. It describes the process from having an idea for a feature, up to the release and monitoring the feature beyond.
 
 - [DevOps](#devops)
   - [1.1 DevOps Phases](#11-devops-phases)
